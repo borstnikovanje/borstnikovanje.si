@@ -1,34 +1,139 @@
+import { useState } from "react";
 import Button from "../ui/Button";
 
-function ProgrammeActivity() {
+const festivalDays = [
+  {
+    dayNumber: 0,
+    title: "Sreda, 21. junij",
+    activities: [
+      {
+        date: "Sreda, 21. junij",
+        time: "9:45 - 10:45",
+        location: "Borštnikov hram",
+        price: 16,
+        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
+        eventType: "Otvoritveni dogodek",
+      },
+      {
+        date: "Sreda, 21. junij",
+        time: "12:00 - 13:45",
+        location: "Borštnikova domačija",
+        price: 16,
+        title: "Kreativna Borštnikova pustolovščina za otroke",
+        eventType: "Delavnica za otroke",
+      },
+      {
+        date: "Sreda, 21. junij",
+        time: "17:45 - 19:45",
+        location: "Pod Jenkovo Lipo",
+        price: 16,
+        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
+        eventType: "Glasbeni večer",
+      },
+    ],
+  },
+  {
+    dayNumber: 1,
+    title: "Četrtek, 22. junij",
+    activities: [
+      {
+        date: "Četrtek, 22. junij",
+        time: "9:45 - 10:45",
+        location: "Borštnikov hram",
+        price: 14,
+        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
+        eventType: "Otvoritveni dogodek",
+      },
+      {
+        date: "Četrtek, 22. junij",
+        time: "12:00 - 13:45",
+        location: "Borštnikova domačija",
+        price: 10,
+        title: "Kreativna Borštnikova pustolovščina za otroke",
+        eventType: "Delavnica za otroke",
+      },
+      {
+        date: "Četrtek, 22. junij",
+        time: "17:45 - 19:45",
+        location: "Pod Jenkovo Lipo",
+        price: 11,
+        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
+        eventType: "Glasbeni večer",
+      },
+    ],
+  },
+  {
+    dayNumber: 2,
+    title: "Petek, 23. junij",
+    activities: [
+      {
+        date: "Petek, 23. junij",
+        time: "9:45 - 10:45",
+        location: "Borštnikov hram",
+        price: 14,
+        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
+        eventType: "Otvoritveni dogodek",
+      },
+      {
+        date: "Petek, 23. junij",
+        time: "12:00 - 13:45",
+        location: "Borštnikova domačija",
+        price: 16,
+        title: "Kreativna Borštnikova pustolovščina za otroke",
+        eventType: "Delavnica za otroke",
+      },
+      {
+        date: "Petek, 23. junij",
+        time: "17:45 - 19:45",
+        location: "Pod Jenkovo Lipo",
+        price: 20,
+        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
+        eventType: "Glasbeni večer",
+      },
+    ],
+  },
+];
+
+type ProgrammeActivityProps = {
+  programmeActivity: {
+    date: string;
+    time: string;
+    location: string;
+    price: number;
+    title: string;
+    eventType: string;
+  };
+};
+
+function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <div className="flex border-t border-primary-200 pt-4">
+    <div className="flex gap-6 border-t border-primary-200 pt-4 first:border-transparent">
       <div className="flex w-7/12 flex-col gap-2">
         <p className="text-primary-200">
-          Sobota, 22. junij {"->"} 9:45 - 10:45
+          {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
-        <p className="text-3xl font-medium text-white">
-          Otvoritev dogodka Borštnik po Borštniku in pogostitev
+        <p className="text-3xl font-medium leading-normal text-white">
+          {programmeActivity.title}
         </p>
       </div>
 
       <div className="flex w-5/12 flex-col gap-4">
-        <div className="flex w-full items-center gap-10 border-b border-primary-200 pb-2 text-primary-200">
-          <p>Kje</p>
+        <div className="flex w-full items-center border-b border-primary-200 pb-2 text-primary-200">
+          <p className="w-3/12">Kje</p>
 
-          <p>12:00</p>
+          <p className="w-9/12">{programmeActivity.location}</p>
         </div>
 
-        <div className="flex w-full items-center gap-10 border-b border-primary-200 pb-2 text-primary-200">
-          <p>Kaj</p>
+        <div className="flex w-full items-center border-b border-primary-200 pb-2 text-primary-200">
+          <p className="w-3/12">Kaj</p>
 
-          <p>12:00</p>
+          <p className="w-9/12">{programmeActivity.eventType}</p>
         </div>
 
-        <div className="flex w-full items-center gap-10 text-primary-200">
-          <p>Kdaj</p>
+        <div className="flex w-full items-center text-primary-200">
+          <p className="w-3/12">Cena</p>
 
-          <p>12:00</p>
+          <p className="w-9/12">€{programmeActivity.price}</p>
         </div>
       </div>
     </div>
@@ -36,20 +141,32 @@ function ProgrammeActivity() {
 }
 
 export default function Programme() {
+  const [selectedDay, setSelectedDay] = useState(0);
+
+  const currentDay = festivalDays[selectedDay];
+
   return (
-    <section className="bg-primary-500 py-10 text-white">
+    <section className="bg-primary-500 py-10 text-white 2xl:py-20">
       <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6">
         <div className="flex items-center justify-between">
-          <p className="text-2xl font-medium">Program dogajanja</p>
+          <p className="text-3xl font-medium">Program dogajanja</p>
 
           <div className="flex items-center gap-4">
-            <Button intent="ghost">Petek, 21. junij</Button>
-            <Button intent="ghost">Petek, 21. junij</Button>
-            <Button intent="ghost">Petek, 21. junij</Button>
+            {festivalDays.map((festivalDay) => (
+              <Button
+                onClick={() => setSelectedDay(festivalDay.dayNumber)}
+                intent={
+                  selectedDay === festivalDay.dayNumber ? "white" : "ghost"
+                }
+                key={festivalDay.dayNumber}
+              >
+                {festivalDay.title}
+              </Button>
+            ))}
           </div>
         </div>
 
-        <div className="flex justify-between gap-10">
+        <div className="flex justify-between gap-20">
           <div className="w-3/12">
             <p>
               Na festivalu »Borštnik po Borštniku« vas čaka bogat in raznolik
@@ -66,10 +183,13 @@ export default function Programme() {
             </p>
           </div>
 
-          <div className="flex w-9/12 flex-col gap-6">
-            <ProgrammeActivity />
-            <ProgrammeActivity />
-            <ProgrammeActivity />
+          <div className="flex w-9/12 flex-col gap-12">
+            {currentDay.activities.map((programmeActivity) => (
+              <ProgrammeActivity
+                key={programmeActivity.time}
+                programmeActivity={programmeActivity}
+              />
+            ))}
           </div>
         </div>
       </div>
