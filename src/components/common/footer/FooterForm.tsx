@@ -17,7 +17,8 @@ export default function FooterForm() {
     reset,
   } = useForm<ContactFormData>();
 
-  const onSubmit: SubmitHandler<ContactFormData> = (formData) => submitMessage(formData);
+  const onSubmit: SubmitHandler<ContactFormData> = (formData) =>
+    submitMessage(formData);
 
   const [status, setStatus] = useState<FetchStatus>("idle");
 
@@ -25,13 +26,16 @@ export default function FooterForm() {
     setStatus("fetching");
 
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("There was an error sending your message!");
@@ -57,7 +61,10 @@ export default function FooterForm() {
         <p>Pišite nam, z veseljem vam bomo odgovorili.</p>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-full flex-col gap-4"
+      >
         {/* TODO
           FIX RING COLOR AND SIZE FOR FOCUS
         */}
@@ -65,7 +72,18 @@ export default function FooterForm() {
           <label className="sr-only" htmlFor="questionInput">
             Vprašanje
           </label>
-          <textarea {...register("message", { required: true })} id="questionInput" cols={30} rows={3} className={`w-full resize-none rounded-md border p-3 text-neutral-950 focus:outline-none focus:ring-1 focus:ring-offset-1 ${errors.message ? "border-red-500 focus:ring-red-500" : ""}`} placeholder="Vprašanje..."></textarea>
+          <textarea
+            {...register("message", { required: true })}
+            id="questionInput"
+            cols={30}
+            rows={3}
+            className={`w-full resize-none rounded-md border border-transparent p-3 text-neutral-950 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              errors.message
+                ? "border-red-500 focus:ring-red-500"
+                : "focus:ring-primary-300"
+            }`}
+            placeholder="Vprašanje..."
+          ></textarea>
         </div>
 
         {/* TODO
@@ -75,10 +93,27 @@ export default function FooterForm() {
           <label className="sr-only" htmlFor="emailInput">
             Vprašanje
           </label>
-          <input {...register("email", { required: true })} id="emailInput" type="email" className={`w-2/3 rounded-bl-md rounded-tl-md border p-3 text-neutral-950 focus:outline-none focus:ring-1 focus:ring-offset-1 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-transparent"}`} placeholder="Vaš e-mail" />
-          <button disabled={status === "fetching" || status === "finished"} className="flex w-1/3 items-center justify-center rounded-br-md rounded-tr-md border-none bg-primary px-6 text-sm font-medium uppercase text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1">
+          <input
+            {...register("email", { required: true })}
+            id="emailInput"
+            type="email"
+            className={`w-2/3 rounded-bl-md rounded-tl-md border border-transparent p-3 text-neutral-950 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              errors.email ? "focus:ring-red-500" : "focus:ring-primary-300"
+            }`}
+            placeholder="Vaš e-mail"
+          />
+          <button
+            disabled={status === "fetching" || status === "finished"}
+            className={`flex w-1/3 items-center justify-center rounded-br-md rounded-tr-md border-none px-6 text-sm font-medium uppercase text-white focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 ${
+              status === "fetching" || status === "finished"
+                ? "bg-primary-600"
+                : "bg-primary-500"
+            }`}
+          >
             {status === "idle" && "Pošljite"}
-            {(status === "fetching" || status === "finished") && <LoadingSpinner />}
+            {(status === "fetching" || status === "finished") && (
+              <LoadingSpinner />
+            )}
           </button>
         </div>
       </form>
