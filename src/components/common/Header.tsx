@@ -7,7 +7,7 @@ type NavLinkProps = {
 
 function NavLink({ href, children }: NavLinkProps) {
   return (
-    <a href={href} className="inline-flex">
+    <a href={href} className="inline-flex text-white transition-colors hover:text-primary-200">
       {children}
     </a>
   );
@@ -15,7 +15,7 @@ function NavLink({ href, children }: NavLinkProps) {
 
 export default function Header() {
   return (
-    <nav className="bg-primary">
+    <nav className="bg-primary-500">
       <div className="mx-auto flex w-11/12 max-w-screen-xl items-center justify-between py-4">
         <a href="/" className="inline-flex" title="Domov" aria-label="Domov">
           <img src="/photos/logo/borstnikovanje-logo-white-no-text.svg" width={40} height={40} alt="Borštnikovanje logo" />

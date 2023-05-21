@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"a"> {}
+
+const props = Astro.props;
+---
+
+<a {...props} class="inline-flex max-w-fit text-neutral-400 transition-colors hover:text-neutral-500">
+  <slot />
+</a>
