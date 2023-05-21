@@ -22,6 +22,9 @@ module.exports = {
         "tan-pearl": ["Tan Pearl", "serif"],
         inter: ["Inter", "sans-serif"],
       },
+      backgroundImage: {
+        cerklje: "url('/photos/landing-page/cerklje-na-gorenjskem.jpg')",
+      },
     },
   },
   plugins: [],
