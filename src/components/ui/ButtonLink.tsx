@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-const button = cva(
+const buttonLink = cva(
   [
     "transition-colors",
     "focus:outline-none",
@@ -85,10 +85,10 @@ const button = cva(
 );
 
 interface Props
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof button> {}
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof buttonLink> {}
 
-export default function Button({
+export default function ButtonLink({
   intent,
   size,
   fullWidth,
@@ -97,11 +97,8 @@ export default function Button({
   ...props
 }: Props) {
   return (
-    <button
-      className={button({ intent, size, fullWidth, withIcon })}
-      {...props}
-    >
+    <a className={buttonLink({ intent, size, fullWidth, withIcon })} {...props}>
       {children}
-    </button>
+    </a>
   );
 }
