@@ -1,24 +1,11 @@
 ---
-import ExperienceCerklje from "../components/common/ExperienceCerklje";
-import FestivalDescription from "../components/common/FestivalDescription.astro";
+import AccordionEvents from "../components/common/AccordionEvents";
 import Hero from "../components/common/Hero.astro";
-import InterestedIn from "../components/common/InterestedIn.astro";
-import Manuals from "../components/common/Manuals.astro";
-import OurTeam from "../components/common/OurTeam.astro";
-import Programme from "../components/common/Programme";
-import Sponsors from "../components/common/Sponsors.astro";
-import Tickets from "../components/common/Tickets.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Borštnik po Borštniku">
   <Hero />
-  <!-- <FestivalDescription />
-  <InterestedIn />
-  <Programme client:visible />
-  <Tickets />
-  <OurTeam />
-  <ExperienceCerklje client:visible />
-  <Sponsors />
-  <Manuals /> -->
+  <AccordionEvents client:idle />
+  <div class="bg-white py-10"></div>
 </Layout>
