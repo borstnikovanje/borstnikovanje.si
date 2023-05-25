@@ -26,6 +26,7 @@ export default function Header() {
             width={40}
             height={40}
             alt="Borštnikovanje logo"
+            loading="eager"
           />
         </a>
 
