@@ -1,0 +1,43 @@
+---
+import { Image } from "@astrojs/image/components";
+---
+
+<section class="bg-hero bg-cover bg-no-repeat py-20 lg:py-32">
+  <div
+    class="mx-auto flex w-11/12 max-w-screen-xl flex-col items-center gap-10 lg:gap-0"
+  >
+    <div class="flex w-full justify-center text-center">
+      <h1 class="font-tan-pearl text-4xl sm:text-7xl lg:text-8xl xl:text-9xl">
+        Borštnikovanje
+      </h1>
+    </div>
+
+    <div
+      class="mx-auto flex w-11/12 max-w-4xl flex-col items-center justify-center lg:-mt-20"
+    >
+      <div class="flex items-center gap-8 text-xl">
+        <p class="hidden uppercase lg:block">Ignacij</p>
+
+        <Image
+          width={400}
+          height={500}
+          src="/photos/landing-page/ignacij-borstnik.png"
+          alt=""
+          format="webp"
+          fetchpriority={"high"}
+        />
+
+        <p class="hidden uppercase lg:block">Borštnik</p>
+      </div>
+
+      <p class="-mt-10 text-center text-lg">
+        Pridružite se nam na Festivalu »Borštnik po Borštniku«, od 21. do 23.
+        junija v idiličnih Cerkljah na Gorenjskem. Uživajte v izjemnih
+        predstavah, ustvarjalnih delavnicah, zanimivih okroglih mizah ter
+        spoznajte, zakaj je Borštnik sinonim za vrhunsko slovensko gledališče.
+        Poleg tega se prepustite užitkom »Borštnikove pojedine« in osvežite se z
+        »Borštnikovim napitkom«.
+      </p>
+    </div>
+  </div>
+</section>
