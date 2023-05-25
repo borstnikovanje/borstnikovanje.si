@@ -1,6 +1,7 @@
 ---
 import ExperienceCerklje from "../components/common/ExperienceCerklje";
 import FestivalDescription from "../components/common/FestivalDescription.astro";
+import Hero from "../components/common/Hero.astro";
 import InterestedIn from "../components/common/InterestedIn.astro";
 import Manuals from "../components/common/Manuals.astro";
 import OurTeam from "../components/common/OurTeam.astro";
@@ -11,20 +12,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Borštnik po Borštniku">
-  <main class="bg-primary-50 py-44">
-    <div class="mx-auto w-11/12 max-w-screen-xl">
-      <h1 class="font-tan-pearl text-4xl text-primary-500 2xl:text-9xl">
-        Borštnikovanje
-      </h1>
-    </div>
-  </main>
-
-  <FestivalDescription />
+  <Hero />
+  <!-- <FestivalDescription />
   <InterestedIn />
   <Programme client:visible />
   <Tickets />
   <OurTeam />
   <ExperienceCerklje client:visible />
   <Sponsors />
-  <Manuals />
+  <Manuals /> -->
 </Layout>
