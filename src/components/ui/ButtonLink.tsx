@@ -9,6 +9,8 @@ const buttonLink = cva(
     "border",
     "inline-flex",
     "items-center",
+    "px-6",
+    "py-2",
   ],
   {
     variants: {
@@ -22,11 +24,13 @@ const buttonLink = cva(
         ],
         white: [
           "bg-white",
-          "text-primary-500",
+          "text-neutral-950",
           "hover:bg-primary-100",
           "focus:ring-primary-200",
           "border-transparent",
         ],
+        "outline-black": ["bg-white", "text-neutral-950", "border-neutral-950"],
+        "outline-white": ["bg-transparent", "text-white", "border-white"],
         success: [
           "bg-success-600",
           "text-white",
@@ -62,13 +66,6 @@ const buttonLink = cva(
           "border-transparent",
         ],
       },
-      size: {
-        xs: ["text-sm", "px-2.5", "py-1.5"],
-        sm: ["text-sm", "px-4", "py-1.5"],
-        base: ["text-base", "px-4", "py-2"],
-        l: ["text-base", "px-4", "py-2"],
-        xl: ["text-base", "px-6", "py-3"],
-      },
       fullWidth: {
         true: ["w-full", "justify-center"],
       },
@@ -79,7 +76,6 @@ const buttonLink = cva(
     },
     defaultVariants: {
       intent: "primary",
-      size: "base",
     },
   }
 );
@@ -90,14 +86,13 @@ interface Props
 
 export default function ButtonLink({
   intent,
-  size,
   fullWidth,
   withIcon,
   children,
   ...props
 }: Props) {
   return (
-    <a className={buttonLink({ intent, size, fullWidth, withIcon })} {...props}>
+    <a className={buttonLink({ intent, fullWidth, withIcon })} {...props}>
       {children}
     </a>
   );

@@ -7,9 +7,19 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), react(), image()]
+  integrations: [
+    mdx(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    react(),
+    image(),
+  ],
+  vite: {
+    ssr: {
+      noExternal: ["@radix-ui/*"],
+    },
+  },
 });
