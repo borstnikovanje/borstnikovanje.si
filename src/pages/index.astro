@@ -1,11 +1,12 @@
 ---
 import AccordionEvents from "../components/common/AccordionEvents";
 import Hero from "../components/common/Hero.astro";
+import Programme from "../components/common/Programme";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Borštnik po Borštniku">
   <Hero />
-  <AccordionEvents client:load />
-  <div class="bg-white py-10"></div>
+  <AccordionEvents client:idle />
+  <Programme client:visible />
 </Layout>

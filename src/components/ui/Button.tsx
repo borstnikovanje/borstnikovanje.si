@@ -31,6 +31,7 @@ const button = cva(
           "border-transparent",
         ],
         "outline-black": ["bg-white", "text-neutral-950", "border-neutral-950"],
+        "outline-white": ["bg-transparent", "text-white", "border-white"],
         success: [
           "bg-success-600",
           "text-white",

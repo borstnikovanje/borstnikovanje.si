@@ -28,6 +28,7 @@ module.exports = {
           "linear-gradient(90deg, #D8A277 20.33%, #B0B3C9 89.63%)",
         grain: "url('/photos/background-images/background-grain.jpg')",
         hero: "url('/photos/background-images/background-header.jpg')",
+        programme: "url('/photos/background-images/background-programme.png')",
       },
     },
   },

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../ui/Button";
+import ButtonLink from "../ui/ButtonLink";
 
 const festivalDays = [
   {
@@ -107,9 +108,9 @@ type ProgrammeActivityProps = {
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <div className="flex gap-6 border-t border-primary-200 pt-4 first:border-transparent">
+    <div className="flex gap-6 border-t border-white pt-4 first:border-transparent">
       <div className="flex w-7/12 flex-col gap-2">
-        <p className="text-primary-200">
+        <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
         <p className="text-3xl font-medium leading-normal text-white">
@@ -118,19 +119,19 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
       </div>
 
       <div className="flex w-5/12 flex-col gap-4">
-        <div className="flex w-full items-center border-b border-primary-200 pb-2 text-primary-200">
+        <div className="flex w-full items-center border-b border-white pb-2">
           <p className="w-3/12">Kje</p>
 
           <p className="w-9/12">{programmeActivity.location}</p>
         </div>
 
-        <div className="flex w-full items-center border-b border-primary-200 pb-2 text-primary-200">
+        <div className="flex w-full items-center border-b border-white pb-2">
           <p className="w-3/12">Kaj</p>
 
           <p className="w-9/12">{programmeActivity.eventType}</p>
         </div>
 
-        <div className="flex w-full items-center text-primary-200">
+        <div className="flex w-full items-center">
           <p className="w-3/12">Cena</p>
 
           <p className="w-9/12">€{programmeActivity.price}</p>
@@ -146,7 +147,7 @@ export default function Programme() {
   const currentDay = festivalDays[selectedDay];
 
   return (
-    <section className="bg-primary-500 py-10 text-white 2xl:py-20">
+    <section className="bg-programme bg-cover bg-no-repeat py-10 text-white lg:py-32">
       <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6">
         <div className="flex items-center justify-between">
           <p className="text-3xl font-medium">Program dogajanja</p>
@@ -156,7 +157,9 @@ export default function Programme() {
               <Button
                 onClick={() => setSelectedDay(festivalDay.dayNumber)}
                 intent={
-                  selectedDay === festivalDay.dayNumber ? "white" : "ghost"
+                  selectedDay === festivalDay.dayNumber
+                    ? "white"
+                    : "outline-white"
                 }
                 key={festivalDay.dayNumber}
               >
@@ -167,7 +170,7 @@ export default function Programme() {
         </div>
 
         <div className="flex justify-between gap-20">
-          <div className="w-3/12">
+          <div className="flex w-3/12 flex-col gap-6">
             <p>
               Na festivalu »Borštnik po Borštniku« vas čaka bogat in raznolik
               program, ki zajema voden ogled po kulturni dediščini Cerkelj,
@@ -181,6 +184,12 @@ export default function Programme() {
               druge, ter celodnevno počitniško varstvo in kreativne delavnice za
               otroke.
             </p>
+
+            <div>
+              <ButtonLink href="/" intent="outline-white">
+                Poglej vse dogodke
+              </ButtonLink>
+            </div>
           </div>
 
           <div className="flex w-9/12 flex-col gap-12">
