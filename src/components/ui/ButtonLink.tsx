@@ -29,7 +29,11 @@ const buttonLink = cva(
           "focus:ring-primary-200",
           "border-transparent",
         ],
-        "outline-black": ["bg-white", "text-neutral-950", "border-neutral-950"],
+        "outline-black": [
+          "bg-transparent",
+          "text-neutral-950",
+          "border-neutral-950",
+        ],
         "outline-white": ["bg-transparent", "text-white", "border-white"],
         success: [
           "bg-success-600",

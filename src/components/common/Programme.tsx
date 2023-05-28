@@ -1,18 +1,20 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 import ButtonLink from "../ui/ButtonLink";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 const festivalDays = [
   {
     dayNumber: 0,
-    title: "Sreda, 21. junij",
+    day: "Sreda",
+    date: "21. junij",
     activities: [
       {
         date: "Sreda, 21. junij",
-        time: "9:45 - 10:45",
-        location: "Borštnikov hram",
+        time: "13:00 - 14:45",
+        location: "Borštnikov vrt",
         price: 16,
-        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
+        title: "Novinarska konferenca in otvoritev festivala",
         eventType: "Otvoritveni dogodek",
       },
       {
@@ -35,7 +37,8 @@ const festivalDays = [
   },
   {
     dayNumber: 1,
-    title: "Četrtek, 22. junij",
+    day: "Četrtek",
+    date: "22. junij",
     activities: [
       {
         date: "Četrtek, 22. junij",
@@ -65,7 +68,8 @@ const festivalDays = [
   },
   {
     dayNumber: 2,
-    title: "Petek, 23. junij",
+    day: "Petek",
+    date: "23. junij",
     activities: [
       {
         date: "Petek, 23. junij",
@@ -108,17 +112,22 @@ type ProgrammeActivityProps = {
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <div className="flex gap-6 border-t border-white pt-4 first:border-transparent">
-      <div className="flex w-7/12 flex-col gap-2">
+    <a
+      href="/"
+      className="flex flex-col gap-6 border-t border-white pt-4 first:border-transparent lg:flex-row"
+    >
+      <div className="flex w-full flex-col gap-2 lg:w-7/12">
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
-        <p className="text-3xl font-medium leading-normal text-white">
+        <p className="text-2xl font-medium leading-normal text-white lg:text-3xl">
           {programmeActivity.title}
         </p>
+
+        <IconArrowUpRight className="h-7 w-7 text-white" />
       </div>
 
-      <div className="flex w-5/12 flex-col gap-4">
+      <div className="flex w-full flex-col gap-4 lg:w-5/12">
         <div className="flex w-full items-center border-b border-white pb-2">
           <p className="w-3/12">Kje</p>
 
@@ -137,7 +146,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           <p className="w-9/12">€{programmeActivity.price}</p>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -148,11 +157,18 @@ export default function Programme() {
 
   return (
     <section className="bg-programme bg-cover bg-no-repeat py-10 text-white lg:py-32">
-      <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6">
-        <div className="flex items-center justify-between">
-          <p className="text-3xl font-medium">Program dogajanja</p>
+      <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6 lg:gap-8">
+        <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-0">
+          <p className="font-tan-pearl text-2xl lg:text-3xl">
+            Program dogajanja
+          </p>
 
-          <div className="flex items-center gap-4">
+          <p className="text-center lg:hidden">
+            Na festivalu »Borštnik po Borštniku« vas čaka bogat in raznolik
+            program, preverite!
+          </p>
+
+          <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
             {festivalDays.map((festivalDay) => (
               <Button
                 onClick={() => setSelectedDay(festivalDay.dayNumber)}
@@ -163,14 +179,18 @@ export default function Programme() {
                 }
                 key={festivalDay.dayNumber}
               >
-                {festivalDay.title}
+                <span className="hidden lg:block">
+                  {festivalDay.day} {festivalDay.date}
+                </span>
+
+                <span className="lg:hidden">{festivalDay.day}</span>
               </Button>
             ))}
           </div>
         </div>
 
         <div className="flex justify-between gap-20">
-          <div className="flex w-3/12 flex-col gap-6">
+          <div className="hidden flex-col gap-6 lg:flex lg:w-3/12">
             <p>
               Na festivalu »Borštnik po Borštniku« vas čaka bogat in raznolik
               program, ki zajema voden ogled po kulturni dediščini Cerkelj,
@@ -192,7 +212,7 @@ export default function Programme() {
             </div>
           </div>
 
-          <div className="flex w-9/12 flex-col gap-12">
+          <div className="flex flex-col gap-12 lg:w-9/12 lg:gap-8">
             {currentDay.activities.map((programmeActivity) => (
               <ProgrammeActivity
                 key={programmeActivity.time}
