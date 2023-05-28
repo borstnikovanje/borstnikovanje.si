@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 import ButtonLink from "../ui/ButtonLink";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 const festivalDays = [
   {
@@ -9,10 +10,10 @@ const festivalDays = [
     activities: [
       {
         date: "Sreda, 21. junij",
-        time: "9:45 - 10:45",
-        location: "Borštnikov hram",
+        time: "13:00 - 14:45",
+        location: "Borštnikov vrt",
         price: 16,
-        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
+        title: "Novinarska konferenca in otvoritev festivala",
         eventType: "Otvoritveni dogodek",
       },
       {
@@ -108,7 +109,10 @@ type ProgrammeActivityProps = {
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <div className="flex gap-6 border-t border-white pt-4 first:border-transparent">
+    <a
+      href="/"
+      className="flex gap-6 border-t border-white pt-4 first:border-transparent"
+    >
       <div className="flex w-7/12 flex-col gap-2">
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
@@ -116,6 +120,8 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
         <p className="text-3xl font-medium leading-normal text-white">
           {programmeActivity.title}
         </p>
+
+        <IconArrowUpRight className="h-7 w-7 text-white" />
       </div>
 
       <div className="flex w-5/12 flex-col gap-4">
@@ -137,7 +143,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           <p className="w-9/12">€{programmeActivity.price}</p>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -148,9 +154,9 @@ export default function Programme() {
 
   return (
     <section className="bg-programme bg-cover bg-no-repeat py-10 text-white lg:py-32">
-      <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6">
+      <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-8">
         <div className="flex items-center justify-between">
-          <p className="text-3xl font-medium">Program dogajanja</p>
+          <p className="font-tan-pearl text-3xl">Program dogajanja</p>
 
           <div className="flex items-center gap-4">
             {festivalDays.map((festivalDay) => (
@@ -192,7 +198,7 @@ export default function Programme() {
             </div>
           </div>
 
-          <div className="flex w-9/12 flex-col gap-12">
+          <div className="flex w-9/12 flex-col gap-8">
             {currentDay.activities.map((programmeActivity) => (
               <ProgrammeActivity
                 key={programmeActivity.time}

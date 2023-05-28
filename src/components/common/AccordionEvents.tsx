@@ -13,7 +13,7 @@ const events = [
   },
   {
     id: 2,
-    title: "Okrogla miza",
+    title: "Klepet ob kavi",
     description:
       "Izvedite najnovejše novice o naših dogodkih, predstavah in delavnicah ter postavite vprašanja.",
     href: "/okrogla-miza",
