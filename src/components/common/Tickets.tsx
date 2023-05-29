@@ -122,20 +122,58 @@ function ActiveTicketType({
   setActiveTicketPerTypeIndex,
 }: ActiveTicketTypeProps) {
   return (
-    <button
-      onClick={() => setActiveTicketPerTypeIndex(ticketPerType.id)}
-      className={`flex items-center ${
-        ticketPerType.id === activeTicketPerTypeIndex
-          ? ""
-          : "text-neutral-400 transition-colors hover:text-neutral-950"
-      }`}
-    >
-      <p className="font-tan-pearl text-5xl uppercase">
-        {ticketPerType.ticketName}
-      </p>
+    <div className="flex flex-col gap-4">
+      <button
+        onClick={() => setActiveTicketPerTypeIndex(ticketPerType.id)}
+        className={`flex items-center ${
+          ticketPerType.id === activeTicketPerTypeIndex
+            ? ""
+            : "text-neutral-400 transition-colors hover:text-neutral-950"
+        }`}
+      >
+        <p className="flex items-center gap-2 font-tan-pearl text-3xl uppercase lg:text-5xl">
+          {ticketPerType.ticketName}
+          <IconChevronRight className="h-8 w-8" />
+        </p>
+      </button>
 
-      <IconChevronRight className="h-8 w-8" />
-    </button>
+      {activeTicketPerTypeIndex === ticketPerType.id && (
+        <div className="flex flex-col gap-4 lg:hidden">
+          <p>
+            <span className="font-bold">EARLYBIRD vstopnica</span> za večerne
+            dogodke (predstava ali koncert)
+          </p>
+
+          <div className="flex flex-col gap-2">
+            <div className="flex w-full items-center border-b border-neutral-400 pb-2">
+              <p className="w-2/12 font-bold">Cena</p>
+
+              <p className="w-10/12">12 €</p>
+            </div>
+
+            {true && (
+              <div className="flex w-full items-center border-b border-neutral-400 pb-2">
+                <div className="w-2/12" />
+
+                <p className="w-10/12">12 € (dijaki, študenti , upokojenci) </p>
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <ButtonLink withIcon="trailing" href="/" intent="outline-black">
+              Nakup vstopnic
+              <IconChevronRight className="h-5 w-5" />
+            </ButtonLink>
+
+            <ButtonLink withIcon="trailing" href="/" intent="outline-black">
+              Več o vstopnici
+              <IconChevronRight className="h-5 w-5" />
+            </ButtonLink>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -185,7 +223,7 @@ export default function Tickets() {
         </div>
 
         <div className="flex w-full">
-          <div className="flex w-7/12 flex-col gap-12">
+          <div className="flex w-full flex-col gap-8 lg:w-7/12 lg:gap-12">
             {activeTicketType.ticketsPerType.map((ticketPerType, index) => (
               <ActiveTicketType
                 ticketPerType={ticketPerType}
@@ -196,7 +234,7 @@ export default function Tickets() {
             ))}
           </div>
 
-          <div className="flex w-5/12 flex-col justify-center gap-10">
+          <div className="hidden w-5/12 flex-col justify-center gap-10 lg:flex">
             <p>
               <span className="font-bold">
                 {activeTicketPerType.ticketTitle}
