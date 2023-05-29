@@ -29,6 +29,8 @@ module.exports = {
         grain: "url('/photos/background-images/background-grain.jpg')",
         hero: "url('/photos/background-images/background-header.jpg')",
         programme: "url('/photos/background-images/background-programme.png')",
+        newsletter:
+          "url('/photos/background-images/background-newsletter.jpg')",
       },
     },
   },
