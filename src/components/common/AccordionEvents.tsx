@@ -8,21 +8,21 @@ const events = [
     id: 1,
     title: "Delavnice",
     description:
-      "Gledališke, kreativne in likovne delavnice za vse ljubitelje gledališča, ustvarjalnih duš in umetniških navdušencev.",
+      "Gledališke, kreativne in likovne delavnice za vse gledališke in umetniške navdušence.",
     href: "/delavnice",
   },
   {
     id: 2,
     title: "Klepet ob kavi",
     description:
-      "Izvedite najnovejše novice o naših dogodkih, predstavah in delavnicah ter postavite vprašanja.",
+      "Prisluhnite pogovoru z Borštnikovimi nagrajenci, ki ga bo vodila igralka Zvezdana Mlakar, in stopite v dialog z njimi tudi vi.",
     href: "/okrogla-miza",
   },
   {
     id: 3,
     title: "Novinarska konferenca",
     description:
-      "'Klepet ob kavi' z Borštnikovimi nagrajenci - spoznajte njihove največje izzive in prelomne trenutke v karieri.",
+      "Izvedite več o festivalu, vseh prihajajočih dogodkih, predstavah in delavnicah iz prve roke ter spoznajte ekipo festivala.",
     href: "/novinarska-konferenca",
   },
 ];

@@ -29,6 +29,22 @@ module.exports = {
         grain: "url('/photos/background-images/background-grain.jpg')",
         hero: "url('/photos/background-images/background-header.jpg')",
         programme: "url('/photos/background-images/background-programme.png')",
+        newsletter:
+          "url('/photos/background-images/background-newsletter.jpg')",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
