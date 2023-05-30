@@ -1,0 +1,63 @@
+{
+  "dayNumber": 2,
+  "day": "Petek",
+  "date": "23. junij",
+  "activities": [
+    {
+      "date": "Petek, 23. junij",
+      "time": "Cel dan",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Likovna kolonija",
+      "eventType": "Likovna delavnica",
+      "highlighted": false
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "13.00 - 14.45",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Kreativne delavnice",
+      "eventType": "Delavnica",
+      "highlighted": false
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "14.00 - 18.00",
+      "location": "Borštnikov hram",
+      "price": 35,
+      "priceStudents": 25,
+      "title": "Delavnica z Blažem Šefom",
+      "eventType": "Delavnica",
+      "highlighted": true
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "17.00 - 18.30",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Klepet ob kavi",
+      "eventType": "Pogovor z Borštnikovimi nagrajenci",
+      "highlighted": true
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "18.00 - 19.15",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Doživi Cerklje",
+      "eventType": "Voden ogled",
+      "highlighted": false
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "20.00 - 21.30",
+      "location": "Borštnikov hram",
+      "price": 16,
+      "priceStudents": 12,
+      "title": "Katalena",
+      "eventType": "Koncert",
+      "highlighted": true
+    }
+  ]
+}

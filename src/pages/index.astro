@@ -3,15 +3,19 @@ import AccordionEvents from "../components/common/AccordionEvents";
 import Hero from "../components/common/Hero.astro";
 import Newsletter from "../components/common/Newsletter";
 import OurTeam from "../components/common/OurTeam";
-import Programme from "../components/common/Programme";
+import ProgrammeLandingPage from "../components/common/ProgrammeLandingPage";
 import Tickets from "../components/common/Tickets";
 import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const events = await getCollection("events");
 ---
 
 <Layout title="Festival Borštnikovanje">
   <Hero />
   <AccordionEvents client:idle />
-  <Programme client:visible />
+  <ProgrammeLandingPage events={events} client:visible />
   <Tickets client:visible />
   <div class="bg-nav-gradient py-32"></div>
   <OurTeam client:visible />

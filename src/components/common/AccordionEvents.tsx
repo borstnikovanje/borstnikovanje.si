@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import ButtonLink from "../ui/ButtonLink";
 import { motion } from "framer-motion";
+import Button from "../ui/Button";
 
 const events = [
   {
@@ -16,7 +17,7 @@ const events = [
     title: "Klepet ob kavi",
     description:
       "Prisluhnite pogovoru z Borštnikovimi nagrajenci, ki ga bo vodila igralka Zvezdana Mlakar, in stopite v dialog z njimi tudi vi.",
-    href: "/okrogla-miza",
+    href: "/klepet-ob-kavi",
   },
   {
     id: 3,
@@ -101,9 +102,9 @@ export default function AccordionEvents() {
                 >
                   {event.description}
                   <div>
-                    <ButtonLink href={event.href} intent="outline-black">
-                      Zanima me več
-                    </ButtonLink>
+                    <Button asChild intent="outline-black">
+                      <a href={event.href}>Zanima me več</a>
+                    </Button>
                   </div>
                 </Accordion.Content>
               </motion.div>

@@ -46,9 +46,9 @@ export default function Header() {
 
             <NavLink href="/kdo-smo">Kdo smo</NavLink>
 
-            <NavLink href="/ali-ves">Ali veš?</NavLink>
+            {/* <NavLink href="/ali-ves">Ali veš?</NavLink> */}
 
-            <NavLink href="/galerija">Galerija</NavLink>
+            {/* <NavLink href="/galerija">Galerija</NavLink> */}
           </div>
 
           {/* TODO */}
