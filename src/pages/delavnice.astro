@@ -4,9 +4,21 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const events = await getCollection("events");
+
+const filteredEvents = events.map((event) => ({
+  ...event,
+  data: {
+    ...event.data,
+    activities: event.data.activities.filter(
+      (activity) => activity.eventType === "Delavnica"
+    ),
+  },
+}));
+
+console.log(filteredEvents);
 ---
 
-<Layout title="Program">
+<Layout title="Delavnice">
   <section class="py-12 lg:py-32">
     <div class="mx-auto w-11/12 max-w-screen-xl">
       <div class="flex flex-col gap-6">
@@ -14,27 +26,23 @@ const events = await getCollection("events");
 
         <div class="flex flex-col gap-6 lg:flex-row lg:gap-12">
           <p class="w-full">
-            Na festivalu »Borštnikovanje« vas čaka bogat in raznolik program.
-            Osrednji program festivala sta večerni predstavi in zaključni
-            koncert, dnevni spremljevalni program pa se razteza tudi na področje
-            kulturnega turizma in gledališke ter likovne pedagogike. Med drugim
-            vključuje voden ogled po kulturni dediščini Cerkelj, ogled
-            Borštnikove hiše, kovačije ter možnost izdelave svojega
-            Borštnikovega kovanca, gledališke in kreativne delavnice, likovno
-            kolonijo z zaključno razstavo ter pogovorom z Borštnikovimi
-            nagrajenci.
+            Pridružite se delavnicam in odkrijte svet ustvarjalnosti ter
+            pridobite nove veščine in izkušnje. Naše delavnice so namenjene
+            različnim profilom in starostnim skupinam, ki jim je skupna želja po
+            kreativnem raziskovanju in iskanju lastnega umetniške izraza.
+            Pripravili smo pester nabor delavnic pod vodstvom izkušenih
+            mentorjev, med katerimi lahko vsakdo najde primerno delavnico zase.
           </p>
           <p class="w-full">
-            Vstopnice za gledališke predstave so na voljo, prav tako pa lahko
-            podarite darilni bon za karte, delavnice, Borštnikovo pojedino ali
-            Borštnikov napitek. Obiskovalcem je na voljo tudi možnost donacij in
-            plačila kart za druge, ter celodnevno počitniško varstvo in
-            kreativne delavnice za otroke.
+            V prijetnem in spodbudnem okolju se boste naučili novih tehnik,
+            pridobili nove perspektive ter se sprostili ob ustvarjanju.
+            Pridružite se nam na naših delavnicah in pustite svoji
+            ustvarjalnosti, da zaživi.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <Programme events={events} client:visible />
+  <Programme events={filteredEvents} client:visible />
 </Layout>

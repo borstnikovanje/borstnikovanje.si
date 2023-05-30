@@ -1,8 +1,7 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import * as Accordion from "@radix-ui/react-accordion";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import ButtonLink from "../ui/ButtonLink";
 
 const teamMembers = [
   {
@@ -13,27 +12,27 @@ const teamMembers = [
   },
   {
     fullName: "Brina Jenček",
-    role: "Idejni vodja",
+    role: "Vodja programa",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea in impedit dicta architecto velit dolores iure facilis, ab tempora repudiandae!",
+      "Brina Jenček je absolventka Dramaturgije in scenskih umetnosti na Akademiji za gledališče, radio, film in televizijo v Ljubljani. Na mednarodnem nivoju deluje na področju praktične dramaturgije, gledališke in filmske kritike, dramskega pisanja ter kulturne produkcije.",
   },
   {
     fullName: "Klara Lotrič",
-    role: "Grafični oblikovalec",
+    role: "Grafična oblikovalka",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea in impedit dicta architecto velit dolores iure facilis, ab tempora repudiandae!",
+      "Moj kompas je vedno usmerjen proti novim izzivom. Ob tem pa uživam v ustvarjanju in odkrivanju novih načinov vizualnega pripovedovanja zgodb.",
   },
   {
     fullName: "Andrijan Tasevski",
     role: "Full-stack developer",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea in impedit dicta architecto velit dolores iure facilis, ab tempora repudiandae!",
+      "Andrijan Tasevski je full-stack razvijalec z željo po kreiranju vizualno izpopolnjenih in uporabnikom prijaznih spletnih straneh. Ves čas je v stiku z najnovejšimi tehnologijami in v iskanju najbolj optimalnih spletnih rešitev.",
   },
   {
     fullName: "Veronika Rožmanc",
-    role: "Design/event manager, UI designer",
+    role: "Grafična oblikovalka",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea in impedit dicta architecto velit dolores iure facilis, ab tempora repudiandae!",
+      "Rožmanc se je s številnimi nagradami že uveljavila tako doma kot v tujini. Trenutno zaključuje študij design managementa, kjer nadgrajuje svoje znanje in veščine. Poleg tega je tudi vodja kreativne ekipe konference Fanfara, kjer uspešno združuje svoje strokovno znanje z vodenjem ekipe. S svojim šotorom OLI pa je pridobila naziv 'Naj mladinski startup 2019', kar dodatno potrjuje njeno odličnost na področju grafičnega oblikovanja, kreativnosti in ustvarjanja enotnih zgodb ter blagovnih znamk.",
   },
   {
     fullName: "Mark Djurašević",
@@ -122,6 +121,7 @@ export default function OurTeam() {
             bi hkrati ohranili dediščino Ignacija Borštnika.
           </p>
         </div>
+
         <Accordion.Root
           type="single"
           className="flex w-full flex-col gap-10"
@@ -174,9 +174,19 @@ export default function OurTeam() {
               >
                 <Accordion.Content
                   ref={(ref) => (contentRefs.current[index] = ref)}
-                  className="flex flex-col gap-4 overflow-hidden"
+                  className="mt-4 flex gap-4 overflow-hidden"
                 >
-                  {teamMember.description}
+                  <p className="w-5/12">{teamMember.description}</p>
+
+                  <div className="flex w-7/12 justify-end">
+                    <img
+                      loading="eager"
+                      width={300}
+                      height={400}
+                      src="/photos/team-members/brina-jencek.jpg"
+                      alt=""
+                    />
+                  </div>
                 </Accordion.Content>
               </motion.div>
             </Accordion.Item>

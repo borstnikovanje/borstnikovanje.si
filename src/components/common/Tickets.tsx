@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../ui/Button";
 import { IconChevronRight } from "@tabler/icons-react";
 import ButtonLink from "../ui/ButtonLink";
+import { AnimatePresence, motion } from "framer-motion";
 
 const tickets = [
   {
@@ -35,16 +36,8 @@ const tickets = [
           "vključuje možnost izbire sedeža, dobrodošlico na Borštnikovi domačiji, pijačo in domače dobrote ter voden ogled Borštnikove rojstne hiše.",
         price: 50,
         ticketLink: "",
-      },
-      {
-        id: 3,
-        ticketName: "doniraj",
-        ticketTitle: "EARLYBIRD 3-DNEVNA vstopnica",
-        ticketDescription:
-          "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
-        price: 39,
-        priceStudents: 30,
-        ticketLink: "",
+        disclaimer:
+          "ob nakupu 10 Borštnikovih vstopnic vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
       },
     ],
   },
@@ -55,22 +48,47 @@ const tickets = [
       {
         id: 0,
         ticketName: "dnevna",
-        ticketTitle: "EARLYBIRD 3-DNEVNA vstopnica",
+        ticketTitle: "Gledališka delavnica",
         ticketDescription:
-          "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
-        price: 39,
-        priceStudents: 30,
+          "vam omogočajo, da razvijete svoje gledališke spretnosti, izrazite svojo ustvarjalnost in se poglobite v svet gledališča.",
+        price: 35,
+        priceStudents: 25,
         ticketLink: "",
+        disclaimer:
+          "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
       },
       {
         id: 1,
         ticketName: "3-dnevna",
-        ticketTitle: "EARLYBIRD 3-DNEVNA vstopnica",
+        ticketTitle: "3 dnevna gledališka delavnica",
         ticketDescription:
-          "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
-        price: 39,
-        priceStudents: 30,
+          "vam omogočajo, da razvijete svoje gledališke spretnosti, izrazite svojo ustvarjalnost in se poglobite v svet gledališča.",
+        price: 87,
+        priceStudents: 62,
         ticketLink: "",
+        disclaimer:
+          "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+      },
+      {
+        id: 2,
+        ticketName: "slikarska",
+        ticketTitle: "Slikarska kolonija",
+        ticketDescription:
+          "bo potekala 21., 22. in 23. junija. Izgubite se  v ustvarjanju, raziskujete svojo umetniško strast in se povežete z drugimi ustvarjalci.",
+        price: 0,
+        ticketLink: "",
+        disclaimer:
+          "Priporočamo prisotnost vsaj 2 dni, saj bomo ob zaključku festivala organizirali razstavo slik, ki bo odprta za javnost.",
+      },
+      {
+        id: 3,
+        ticketName: "kreativna",
+        ticketTitle: "Kreativne delavnice",
+        ticketDescription:
+          "so namenjene otrokom od 5. do 9. razreda. Spoznali bodo osnove gledališča ter se naučili, kako uporabiti različne materiale za ustvarjanje odrske scenografije. Skozi zabavne in interaktivne dejavnosti bodo otroci razvijali svojo domišljijo, ustvarjalnost in timsko delo.",
+        price: 0,
+        ticketLink: "",
+        disclaimer: "za otroke 5.-9. razred, omejitev 20 udeležencev.",
       },
     ],
   },
@@ -80,23 +98,34 @@ const tickets = [
     ticketsPerType: [
       {
         id: 0,
-        ticketName: "dnevna",
-        ticketTitle: "EARLYBIRD 3-DNEVNA vstopnica",
+        ticketName: "voden ogled",
+        ticketTitle: "Vodeni ogled po kulturni dediščini Cerkelj",
         ticketDescription:
-          "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
-        price: 39,
-        priceStudents: 30,
+          "je nepozabno doživetje, ki ga ne smete zamuditi. Pridružite se nam na ogledu, ki vključuje tudi Borštnikovo hišo in prikaz kovaštva.",
+        price: 0,
         ticketLink: "",
+        disclaimer:
+          "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
       },
       {
         id: 1,
-        ticketName: "3-dnevna",
-        ticketTitle: "EARLYBIRD 3-DNEVNA vstopnica",
+        ticketName: "konferenca",
+        ticketTitle: "Novinarska konferenca",
         ticketDescription:
-          "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
-        price: 39,
-        priceStudents: 30,
+          "bo potekala 21. junija ob 11. uri na vrtu Borštnikove domačije. Dogodek je odprt tudi za goste. Lepo vabljeni.",
+        price: 0,
         ticketLink: "",
+        disclaimer: "",
+      },
+      {
+        id: 2,
+        ticketName: "pogovor",
+        ticketTitle: "Pogovor z Borštnikovimi nagrajenci",
+        ticketDescription:
+          "bo 23. junija ob 17. uri na vrtu Borštnikove domačije. Vstop je prost. Ne zamudite te priložnosti za vpogled v svet vrhunskih umetnikov.",
+        price: 0,
+        ticketLink: "",
+        disclaimer: "",
       },
     ],
   },
@@ -140,22 +169,25 @@ function ActiveTicketType({
       {activeTicketPerTypeIndex === ticketPerType.id && (
         <div className="flex flex-col gap-4 lg:hidden">
           <p>
-            <span className="font-bold">EARLYBIRD vstopnica</span> za večerne
-            dogodke (predstava ali koncert)
+            <span className="font-bold">{ticketPerType.ticketTitle}</span>{" "}
+            {ticketPerType.ticketDescription}
           </p>
 
           <div className="flex flex-col gap-2">
             <div className="flex w-full items-center border-b border-neutral-400 pb-2">
               <p className="w-2/12 font-bold">Cena</p>
 
-              <p className="w-10/12">12 €</p>
+              <p className="w-10/12">{ticketPerType.price} €</p>
             </div>
 
-            {true && (
+            {ticketPerType.priceStudents && (
               <div className="flex w-full items-center border-b border-neutral-400 pb-2">
                 <div className="w-2/12" />
 
-                <p className="w-10/12">12 € (dijaki, študenti , upokojenci) </p>
+                <p className="w-10/12">
+                  {ticketPerType.priceStudents} € (dijaki, študenti ,
+                  upokojenci){" "}
+                </p>
               </div>
             )}
           </div>
@@ -254,7 +286,7 @@ export default function Tickets() {
                   <div className="w-2/12" />
 
                   <p className="w-10/12">
-                    {activeTicketPerType.priceStudents} € (dijaki, študenti ,
+                    {activeTicketPerType.priceStudents} € (dijaki, študenti,
                     upokojenci){" "}
                   </p>
                 </div>
