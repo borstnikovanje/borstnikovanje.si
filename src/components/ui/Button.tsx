@@ -1,6 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import { forwardRef } from "react";
 
-const button = cva(
+export const buttonVariants = cva(
   [
     "transition-colors",
     "focus:outline-none",
@@ -11,61 +13,38 @@ const button = cva(
     "items-center",
     "px-6",
     "py-2",
-    "text-sm",
   ],
   {
     variants: {
       intent: {
         primary: [
-          "bg-primary-500",
-          "text-white",
-          "hover:bg-primary-600",
-          "focus:ring-primary-500",
+          "bg-primary-foreground",
+          "text-primary",
+          "focus:ring-primary-foreground",
           "border-transparent",
         ],
         white: [
-          "bg-white",
-          "text-neutral-950",
-          "hover:bg-primary-100",
-          "focus:ring-primary-200",
+          "bg-primary",
+          "text-primary-foreground",
+          "focus:ring-primary-foreground",
           "border-transparent",
         ],
-        "outline-black": ["bg-white", "text-neutral-950", "border-neutral-950"],
-        "outline-white": ["bg-transparent", "text-white", "border-white"],
-        success: [
-          "bg-success-600",
-          "text-white",
-          "hover:bg-success-700",
-          "focus:ring-success-500",
-          "border-transparent",
-        ],
-        warning: [
-          "bg-warning-400",
-          "text-warning-900",
-          "hover:bg-warning-500",
-          "focus:ring-warning-400",
-          "border-transparent",
-        ],
-        error: [
-          "bg-error-600",
-          "text-error-50",
-          "hover:bg-error-700",
-          "focus:ring-error-500",
-          "border-transparent",
-        ],
-        ghost: [
+        "outline-black": [
           "bg-transparent",
-          "text-white",
-          "border-white",
-          "focus:ring-primary-100",
+          "text-primary-foreground",
+          "border-primary-foreground",
+          "focus:ring-primary-foreground",
         ],
-        loading: ["bg-primary-900", "text-white", "border-transparent"],
-        disabled: [
-          "bg-gray-100",
-          "text-gray-400",
-          "cursor-auto",
-          "border-transparent",
+        "outline-white": [
+          "bg-transparent",
+          "text-primary",
+          "border-primary",
+          "focus:ring-primary-foreground",
         ],
+      },
+      size: {
+        small: "text-sm",
+        base: "text-base",
       },
       fullWidth: {
         true: ["w-full", "justify-center"],
@@ -77,24 +56,26 @@ const button = cva(
     },
     defaultVariants: {
       intent: "primary",
+      size: "base",
     },
   }
 );
 
-interface Props
+interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof button> {}
-
-export default function Button({
-  intent,
-  fullWidth,
-  withIcon,
-  children,
-  ...props
-}: Props) {
-  return (
-    <button className={button({ intent, fullWidth, withIcon })} {...props}>
-      {children}
-    </button>
-  );
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, intent, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp className={buttonVariants({ intent, size })} ref={ref} {...props} />
+    );
+  }
+);
+
+Button.displayName = "Button";
+
+export default Button;
