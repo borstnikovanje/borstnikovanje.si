@@ -1,0 +1,54 @@
+{
+  "dayNumber": 1,
+  "day": "Četrtek",
+  "date": "22. junij",
+  "activities": [
+    {
+      "date": "Četrtek, 22. junij",
+      "time": "Cel dan",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Likovna kolonija",
+      "eventType": "Delavnica",
+      "highlighted": false
+    },
+    {
+      "date": "Četrtek, 22. junij",
+      "time": "13.00 - 14.45",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Kreativne delavnice",
+      "eventType": "Delavnica",
+      "highlighted": false
+    },
+    {
+      "date": "Četrtek, 22. junij",
+      "time": "14.00 - 18.00",
+      "location": "Borštnikov hram",
+      "price": 35,
+      "priceStudents": 25,
+      "title": "Delavnica s Tjašo Črnigoj",
+      "eventType": "Delavnica",
+      "highlighted": true
+    },
+    {
+      "date": "Četrtek, 22. junij",
+      "time": "18.00 - 19.15",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Doživi Cerklje",
+      "eventType": "Voden ogled",
+      "highlighted": true
+    },
+    {
+      "date": "Četrtek, 22. junij",
+      "time": "20.00 - 21.30",
+      "location": "Borštnikov hram",
+      "price": 16,
+      "priceStudents": 12,
+      "title": "Predsednice",
+      "eventType": "Predstava",
+      "highlighted": true
+    }
+  ]
+}

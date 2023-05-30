@@ -12,7 +12,7 @@ function NavLink({ href, children }: NavLinkProps) {
   return (
     <a
       href={href}
-      className="inline-flex text-white transition-colors hover:text-primary-200"
+      className="hover:text-primary-200 inline-flex text-white transition-colors"
     >
       {children}
     </a>
@@ -46,15 +46,17 @@ export default function Header() {
 
             <NavLink href="/kdo-smo">Kdo smo</NavLink>
 
-            <NavLink href="/ali-ves">Ali veš?</NavLink>
+            {/* <NavLink href="/ali-ves">Ali veš?</NavLink> */}
 
-            <NavLink href="/galerija">Galerija</NavLink>
+            {/* <NavLink href="/galerija">Galerija</NavLink> */}
           </div>
 
           {/* TODO */}
           {/* ADD TW MERGE TO REMOVE DIVS IN SUCH CASES */}
           <div className="hidden lg:block">
-            <Button intent="white">Nakup kart</Button>
+            <Button asChild intent="white" size="small">
+              <a href="/nakup-kart">Nakup kart</a>
+            </Button>
           </div>
 
           {/* TODO */}
