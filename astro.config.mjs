@@ -4,8 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import image from "@astrojs/image";
 
-import cloudflare from "@astrojs/cloudflare";
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -22,10 +20,5 @@ export default defineConfig({
     ssr: {
       noExternal: ["@radix-ui/*"],
     },
-  },
-  output: "hybrid",
-  adapter: cloudflare(),
-  experimental: {
-    hybridOutput: true,
   },
 });

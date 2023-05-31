@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.3.0",
     "@astrojs/image": "^0.16.9",
     "@astrojs/mdx": "^0.19.2",
     "@astrojs/react": "^2.2.0",
