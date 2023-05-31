@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import ButtonLink from "../ui/ButtonLink";
+import { buttonVariants } from "../ui/Button";
 ---
 
 <section class="bg-hero bg-cover bg-no-repeat py-12 lg:py-32">
@@ -70,7 +71,11 @@ import ButtonLink from "../ui/ButtonLink";
         napitkom«.
       </p>
 
-      <ButtonLink href="/" intent={"outline-black"}>Zanima me več</ButtonLink>
+      <a
+        href="/program"
+        class={buttonVariants({ intent: "outline-black", size: "base" })}
+        >Zanima me več</a
+      >
     </div>
   </div>
 </section>

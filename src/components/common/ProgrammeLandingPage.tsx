@@ -1,104 +1,7 @@
 import { useState } from "react";
 import Button from "../ui/Button";
-import ButtonLink from "../ui/ButtonLink";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import type { CollectionEntry } from "astro:content";
-
-const festivalDays = [
-  {
-    dayNumber: 0,
-    day: "Sreda",
-    date: "21. junij",
-    activities: [
-      {
-        date: "Sreda, 21. junij",
-        time: "13:00 - 14:45",
-        location: "Borštnikov vrt",
-        price: 16,
-        title: "Novinarska konferenca in otvoritev festivala",
-        eventType: "Otvoritveni dogodek",
-      },
-      {
-        date: "Sreda, 21. junij",
-        time: "12:00 - 13:45",
-        location: "Borštnikova domačija",
-        price: 16,
-        title: "Kreativna Borštnikova pustolovščina za otroke",
-        eventType: "Delavnica za otroke",
-      },
-      {
-        date: "Sreda, 21. junij",
-        time: "17:45 - 19:45",
-        location: "Pod Jenkovo Lipo",
-        price: 16,
-        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
-        eventType: "Glasbeni večer",
-      },
-    ],
-  },
-  {
-    dayNumber: 1,
-    day: "Četrtek",
-    date: "22. junij",
-    activities: [
-      {
-        date: "Četrtek, 22. junij",
-        time: "9:45 - 10:45",
-        location: "Borštnikov hram",
-        price: 14,
-        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
-        eventType: "Otvoritveni dogodek",
-      },
-      {
-        date: "Četrtek, 22. junij",
-        time: "12:00 - 13:45",
-        location: "Borštnikova domačija",
-        price: 10,
-        title: "Kreativna Borštnikova pustolovščina za otroke",
-        eventType: "Delavnica za otroke",
-      },
-      {
-        date: "Četrtek, 22. junij",
-        time: "17:45 - 19:45",
-        location: "Pod Jenkovo Lipo",
-        price: 11,
-        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
-        eventType: "Glasbeni večer",
-      },
-    ],
-  },
-  {
-    dayNumber: 2,
-    day: "Petek",
-    date: "23. junij",
-    activities: [
-      {
-        date: "Petek, 23. junij",
-        time: "9:45 - 10:45",
-        location: "Borštnikov hram",
-        price: 14,
-        title: "Otvoritev dogodka Borštnik po Borštniku in pogostitev",
-        eventType: "Otvoritveni dogodek",
-      },
-      {
-        date: "Petek, 23. junij",
-        time: "12:00 - 13:45",
-        location: "Borštnikova domačija",
-        price: 16,
-        title: "Kreativna Borštnikova pustolovščina za otroke",
-        eventType: "Delavnica za otroke",
-      },
-      {
-        date: "Petek, 23. junij",
-        time: "17:45 - 19:45",
-        location: "Pod Jenkovo Lipo",
-        price: 20,
-        title: "Glasbeni večer pod zvezdami pod Jenkovo Lipo",
-        eventType: "Glasbeni večer",
-      },
-    ],
-  },
-];
 
 // TODO
 // FIX TYPES
@@ -111,13 +14,14 @@ type ProgrammeActivityProps = {
     priceStudents?: number;
     title: string;
     eventType: string;
+    eventLink: string;
   };
 };
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
     <a
-      href="/"
+      href={programmeActivity.eventLink}
       className="flex flex-col gap-6 border-t border-white pt-4 first:border-transparent lg:flex-row"
     >
       <div className="flex w-full flex-col gap-2 lg:w-7/12">

@@ -13,13 +13,14 @@ type ProgrammeActivityProps = {
     price: number;
     title: string;
     eventType: string;
+    eventLink: string;
   };
 };
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
     <a
-      href="/"
+      href={programmeActivity.eventLink}
       className="flex flex-col gap-6 border-t border-primary-foreground pt-4 text-primary-foreground first:border-transparent lg:flex-row"
     >
       <div className="flex w-full flex-col gap-2 lg:w-7/12">

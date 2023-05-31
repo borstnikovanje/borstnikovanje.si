@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "../ui/Button";
 import { IconChevronRight } from "@tabler/icons-react";
 import ButtonLink from "../ui/ButtonLink";
-import { AnimatePresence, motion } from "framer-motion";
 
 const tickets = [
   {
@@ -17,6 +16,7 @@ const tickets = [
         price: 16,
         priceStudents: 12,
         ticketLink: "",
+        callToAction: "Nakup vstopnic",
       },
       {
         id: 1,
@@ -27,6 +27,7 @@ const tickets = [
         price: 39,
         priceStudents: 30,
         ticketLink: "",
+        callToAction: "Nakup vstopnic",
       },
       {
         id: 2,
@@ -38,6 +39,7 @@ const tickets = [
         ticketLink: "",
         disclaimer:
           "ob nakupu 10 Borštnikovih vstopnic vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+        callToAction: "Nakup vstopnic",
       },
     ],
   },
@@ -56,6 +58,7 @@ const tickets = [
         ticketLink: "",
         disclaimer:
           "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+        callToAction: "Nakup vstopnic",
       },
       {
         id: 1,
@@ -68,6 +71,7 @@ const tickets = [
         ticketLink: "",
         disclaimer:
           "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+        callToAction: "Nakup vstopnic",
       },
       {
         id: 2,
@@ -79,6 +83,7 @@ const tickets = [
         ticketLink: "",
         disclaimer:
           "Priporočamo prisotnost vsaj 2 dni, saj bomo ob zaključku festivala organizirali razstavo slik, ki bo odprta za javnost.",
+        callToAction: "Nakup vstopnic",
       },
       {
         id: 3,
@@ -89,6 +94,7 @@ const tickets = [
         price: 0,
         ticketLink: "",
         disclaimer: "za otroke 5.-9. razred, omejitev 20 udeležencev.",
+        callToAction: "Nakup vstopnic",
       },
     ],
   },
@@ -106,6 +112,7 @@ const tickets = [
         ticketLink: "",
         disclaimer:
           "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
+        callToAction: "Več",
       },
       {
         id: 1,
@@ -116,6 +123,7 @@ const tickets = [
         price: 0,
         ticketLink: "",
         disclaimer: "",
+        callToAction: "Več",
       },
       {
         id: 2,
@@ -126,6 +134,7 @@ const tickets = [
         price: 0,
         ticketLink: "",
         disclaimer: "",
+        callToAction: "Več",
       },
     ],
   },
@@ -140,6 +149,8 @@ type ActiveTicketTypeProps = {
     price: number;
     priceStudents?: number;
     ticketLink: string;
+    callToAction: string;
+    disclaimer?: string;
   };
   activeTicketPerTypeIndex: number;
   setActiveTicketPerTypeIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -192,14 +203,16 @@ function ActiveTicketType({
             )}
           </div>
 
+          {ticketPerType.disclaimer && (
+            <p className="text-sm italic text-muted">
+              *{ticketPerType.disclaimer}
+            </p>
+          )}
+
           <div className="flex flex-col gap-4">
             <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-              Nakup vstopnic
-              <IconChevronRight className="h-5 w-5" />
-            </ButtonLink>
+              {ticketPerType.callToAction}
 
-            <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-              Več o vstopnici
               <IconChevronRight className="h-5 w-5" />
             </ButtonLink>
           </div>
@@ -293,14 +306,15 @@ export default function Tickets() {
               )}
             </div>
 
+            {activeTicketPerType.disclaimer && (
+              <p className="text-sm italic text-muted">
+                *{activeTicketPerType.disclaimer}
+              </p>
+            )}
+
             <div className="flex gap-4">
               <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-                Nakup vstopnic
-                <IconChevronRight className="h-5 w-5" />
-              </ButtonLink>
-
-              <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-                Več o vstopnici
+                {activeTicketPerType.callToAction}
                 <IconChevronRight className="h-5 w-5" />
               </ButtonLink>
             </div>
