@@ -1,0 +1,86 @@
+---
+import { Image } from "@astrojs/image/components";
+import LayoutLinktree from "../layouts/LayoutLinktree.astro";
+import FacebookIcon from "../components/icons/FacebookIcon.astro";
+import InstagramIcon from "../components/icons/InstagramIcon.astro";
+import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
+import { IconChevronRight } from "@tabler/icons-react";
+import * as Separator from "@radix-ui/react-separator";
+import NewsletterForm from "../components/common/NewsletterForm";
+
+const links = [
+  { title: "Več o Borštnikovanju", href: "/" },
+  { title: "Program dogodka", href: "/program" },
+  { title: "Nakup kart", href: "/program" },
+  { title: "Donacije", href: "/doniraj" },
+];
+---
+
+<LayoutLinktree title="Vizitka - Festival Borštnikovanje">
+  <main
+    class="mx-auto flex min-h-screen w-11/12 max-w-md flex-col items-center justify-center gap-8 py-10"
+  >
+    <section class="flex flex-col items-center gap-10">
+      <Image
+        width={60}
+        height={60}
+        src="/photos/logo/borstnikovanje-dark-logo-no-text.svg"
+        alt="Logo"
+        format="svg"
+        fetchpriority={"high"}
+      />
+
+      <div class="flex flex-col gap-2 text-center">
+        <h1 class="font-tan-pearl text-4xl">Borštnikovanje</h1>
+        <p class="text-lg">21. do 23. junija</p>
+      </div>
+    </section>
+
+    <section class="flex items-center gap-4">
+      <a href="/" title="Odpri Facebook" aria-label="Odpri Facebook">
+        <FacebookIcon class="h-10 w-10" />
+      </a>
+
+      <a href="/" title="Odpri Instagram" aria-label="Odpri Instagram">
+        <InstagramIcon class="h-10 w-10" />
+      </a>
+
+      <a href="/" title="Pokliči na WhatsApp" aria-label="Pokliči na WhatsApp">
+        <WhatsAppIcon class="h-10 w-10" />
+      </a>
+    </section>
+
+    <section class="flex w-full flex-col items-center gap-4">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="group flex w-full items-center justify-between border border-primary-foreground p-3 transition-colors group-hover:border-muted"
+          >
+            <span />
+            <span>{link.title}</span>
+
+            <IconChevronRight />
+          </a>
+        ))
+      }
+    </section>
+
+    <section class="flex w-full flex-col gap-4">
+      <Separator.Root
+        className="bg-primary-foreground data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px my-[15px]"
+        decorative
+        orientation="horizontal"
+      />
+      <h2 class="text-center font-tan-pearl text-2xl">
+        Prijavite se na e-novičke
+      </h2>
+      <NewsletterForm client:load />
+      <Separator.Root
+        className="bg-primary-foreground data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px my-[15px]"
+        decorative
+        orientation="horizontal"
+      />
+    </section>
+  </main>
+</LayoutLinktree>
