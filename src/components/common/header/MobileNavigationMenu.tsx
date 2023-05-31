@@ -27,7 +27,7 @@ const MobileNavigationMenuItem = ({
     <li>
       <a
         onClick={closeMobileNavigationMenu}
-        className="flex items-center gap-2 px-6 py-2 transition-colors hover:bg-primary-600 hover:text-primary-50"
+        className="hover:bg-primary-600 hover:text-primary-50 flex items-center gap-2 px-6 py-2 transition-colors"
         href={href}
       >
         {children}
@@ -106,7 +106,7 @@ const MobileNavigationMenu = ({
                         Kdo smo
                       </MobileNavigationMenuItem>
 
-                      <MobileNavigationMenuItem
+                      {/* <MobileNavigationMenuItem
                         closeMobileNavigationMenu={closeMobileNavigationMenu}
                         href="/ali-ves"
                       >
@@ -118,21 +118,21 @@ const MobileNavigationMenu = ({
                         href="/galerija"
                       >
                         Galerija
-                      </MobileNavigationMenuItem>
+                      </MobileNavigationMenuItem> */}
                     </ul>
                   </div>
 
                   <div className="absolute inset-x-0 bottom-0 flex w-full items-center justify-center gap-4 p-4">
                     <a href="/">
-                      <IconBrandInstagram className="h-7 w-7 text-gray-900 transition-colors hover:text-primary-600" />
+                      <IconBrandInstagram className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
                     </a>
 
                     <a href="/">
-                      <IconBrandTwitter className="h-7 w-7 text-gray-900 transition-colors hover:text-primary-600" />
+                      <IconBrandTwitter className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
                     </a>
 
                     <a href="/">
-                      <IconBrandFacebook className="h-7 w-7 text-gray-900 transition-colors hover:text-primary-600" />
+                      <IconBrandFacebook className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
                     </a>
                   </div>
                 </Dialog.Panel>

@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         primary: colors.neutral[50],
         "primary-foreground": colors.neutral[950],
-        muted: colors.neutral[400],
+        muted: colors.neutral[500],
       },
       fontFamily: {
         "tan-pearl": ["Tan Pearl", "serif"],

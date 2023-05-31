@@ -10,7 +10,8 @@
       "price": 0,
       "title": "Likovna kolonija",
       "eventType": "Delavnica",
-      "highlighted": false
+      "highlighted": false,
+      "eventLink": "/likovna-kolonija"
     },
     {
       "date": "Sreda, 21. junij",
@@ -19,7 +20,8 @@
       "price": 0,
       "title": "Novinarska konferenca",
       "eventType": "Konferenca",
-      "highlighted": true
+      "highlighted": true,
+      "eventLink": "/novinarska-konferenca"
     },
     {
       "date": "Sreda, 21. junij",
@@ -28,7 +30,8 @@
       "price": 0,
       "title": "Kreativne delavnice",
       "eventType": "Delavnica",
-      "highlighted": false
+      "highlighted": false,
+      "eventLink": "/kreativne-delavnice"
     },
     {
       "date": "Sreda, 21. junij",
@@ -38,7 +41,8 @@
       "priceStudents": 25,
       "title": "Delavnica z Markom Mandićem",
       "eventType": "Delavnica",
-      "highlighted": true
+      "highlighted": true,
+      "eventLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX"
     },
     {
       "date": "Sreda, 21. junij",
@@ -47,7 +51,8 @@
       "price": 0,
       "title": "Doživi Cerklje",
       "eventType": "Voden ogled",
-      "highlighted": false
+      "highlighted": false,
+      "eventLink": "/dozivi-cerklje"
     },
     {
       "date": "Sreda, 21. junij",
@@ -57,7 +62,8 @@
       "priceStudents": 12,
       "title": "Ne ti meni Alice (Once Again)",
       "eventType": "Predstava",
-      "highlighted": true
+      "highlighted": true,
+      "eventLink": "https://olaii.com/event/3084/festival-borstnikovanje-ne-ti-meni-alice-once-again?ref=KSMUMVX"
     }
   ]
 }
