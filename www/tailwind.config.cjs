@@ -23,6 +23,7 @@ module.exports = {
         programme: "url('/photos/background-images/background-programme.png')",
         newsletter:
           "url('/photos/background-images/background-newsletter.jpg')",
+        linktree: "url('/photos/background-images/background-linktree.jpg')",
       },
     },
   },
