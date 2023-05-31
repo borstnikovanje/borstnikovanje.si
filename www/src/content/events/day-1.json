@@ -11,7 +11,7 @@
       "title": "Likovna kolonija",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/likovna-kolonija"
+      "eventLink": "/dogodki/day-1/likovna-kolonija"
     },
     {
       "date": "Sreda, 21. junij",
@@ -21,7 +21,7 @@
       "title": "Novinarska konferenca",
       "eventType": "Konferenca",
       "highlighted": true,
-      "eventLink": "/novinarska-konferenca"
+      "eventLink": "/dogodki/day-1/novinarska-konferenca"
     },
     {
       "date": "Sreda, 21. junij",
@@ -31,7 +31,7 @@
       "title": "Kreativne delavnice",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/kreativne-delavnice"
+      "eventLink": "/dogodki/day-1/kreativne-delavnice"
     },
     {
       "date": "Sreda, 21. junij",
@@ -52,7 +52,7 @@
       "title": "Doživi Cerklje",
       "eventType": "Voden ogled",
       "highlighted": false,
-      "eventLink": "/dozivi-cerklje"
+      "eventLink": "/dogodki/day-1/dozivi-cerklje"
     },
     {
       "date": "Sreda, 21. junij",
