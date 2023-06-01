@@ -11,17 +11,23 @@ type ProgrammeActivityProps = {
     time: string;
     location: string;
     price: number;
-    priceStudents?: number;
+    priceStudents?: number | undefined;
     title: string;
     eventType: string;
     eventLink: string;
+    callToActionLink?: string | undefined;
+    callToActionTitle?: string | undefined;
   };
 };
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
     <a
-      href={programmeActivity.eventLink}
+      href={
+        programmeActivity.callToActionLink
+          ? programmeActivity.callToActionLink
+          : programmeActivity.eventLink
+      }
       className="flex flex-col gap-6 border-t border-white pt-4 first:border-transparent lg:flex-row"
     >
       <div className="flex w-full flex-col gap-2 lg:w-7/12">
