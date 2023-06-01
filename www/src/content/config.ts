@@ -32,6 +32,8 @@ const teamMembersCollection = defineCollection({
     photo: z.string(),
     instagramLink: z.string().optional(),
     linkedInLink: z.string().optional(),
+    order: z.number(),
+    highlighted: z.boolean(),
   }),
 });
 

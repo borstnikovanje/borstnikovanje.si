@@ -5,5 +5,7 @@
   "description": "Brina Jenček je absolventka Dramaturgije in scenskih umetnosti na Akademiji za gledališče, radio, film in televizijo v Ljubljani. Na mednarodnem nivoju deluje na področju praktične dramaturgije, gledališke in filmske kritike, dramskega pisanja ter kulturne produkcije.",
   "photo": "/photos/team-members/brina-jencek.jpg",
   "instagramLink": "https://www.instagram.com/brinajencek/",
-  "linkedInLink": "https://www.linkedin.com/in/brina-jen%C4%8Dek-708b07225/"
+  "linkedInLink": "https://www.linkedin.com/in/brina-jen%C4%8Dek-708b07225/",
+  "order": 2,
+  "highlighted": true
 }
