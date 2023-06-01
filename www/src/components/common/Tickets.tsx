@@ -211,7 +211,10 @@ function ActiveTicketType({
 
           <div className="flex flex-col gap-4">
             <Button asChild withIcon="trailing" intent="outline-black">
-              <a href={ticketPerType.ticketLink}>
+              <a
+                className="flex items-center justify-center gap-1"
+                href={ticketPerType.ticketLink}
+              >
                 {ticketPerType.callToAction}
 
                 <IconChevronRight className="h-5 w-5" />
@@ -320,7 +323,10 @@ export default function Tickets() {
 
             <div className="flex gap-4">
               <Button asChild withIcon="trailing" intent="outline-black">
-                <a href={activeTicketPerType.ticketLink}>
+                <a
+                  className="flex items-center justify-center gap-1"
+                  href={activeTicketPerType.ticketLink}
+                >
                   {activeTicketPerType.callToAction}
 
                   <IconChevronRight className="h-5 w-5" />
