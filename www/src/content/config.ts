@@ -17,6 +17,8 @@ const eventsCollection = defineCollection({
         highlighted: z.boolean(),
         location: z.string(),
         eventLink: z.string(),
+        callToActionLink: z.string().optional(),
+        callToActionTitle: z.string().optional(),
       })
     ),
   }),

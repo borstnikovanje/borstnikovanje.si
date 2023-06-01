@@ -8,10 +8,12 @@
       "time": "Cel dan",
       "location": "Borštnikov vrt",
       "price": 0,
-      "title": "Likovna kolonija",
+      "title": "Slikarska kolonija",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-2/likovna-kolonija"
+      "eventLink": "/dogodki/day-2/likovna-kolonija",
+      "callToActionLink": "/prijava-kolonija",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Četrtek, 22. junij",
@@ -21,7 +23,9 @@
       "title": "Kreativne delavnice",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-2/kreativne-delavnice"
+      "eventLink": "/dogodki/day-2/kreativne-delavnice",
+      "callToActionLink": "/prijava-delavnice-2",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Četrtek, 22. junij",
@@ -32,7 +36,9 @@
       "title": "Delavnica s Tjašo Črnigoj",
       "eventType": "Delavnica",
       "highlighted": true,
-      "eventLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX"
+      "eventLink": "/dogodki/day-2/delavnica-tjasa-crnigoj",
+      "callToActionLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
     },
     {
       "date": "Četrtek, 22. junij",
@@ -42,7 +48,9 @@
       "title": "Doživi Cerklje",
       "eventType": "Voden ogled",
       "highlighted": false,
-      "eventLink": "/dogodki/day-2/dozivi-cerklje"
+      "eventLink": "/dogodki/day-2/dozivi-cerklje",
+      "callToActionLink": "/prijava-cerklje-2",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Četrtek, 22. junij",
@@ -53,7 +61,9 @@
       "title": "Predsednice",
       "eventType": "Predstava",
       "highlighted": true,
-      "eventLink": "https://olaii.com/event/3086/festival-borstnikovanje-predsednice?ref=KSMUMVX"
+      "eventLink": "/dogodki/day-2/predsednice",
+      "callToActionLink": "https://olaii.com/event/3086/festival-borstnikovanje-predsednice?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
     }
   ]
 }
