@@ -80,10 +80,10 @@ const tickets = [
         ticketDescription:
           "bo potekala 21., 22. in 23. junija. Izgubite se  v ustvarjanju, raziskujete svojo umetniško strast in se povežete z drugimi ustvarjalci.",
         price: 0,
-        ticketLink: "",
+        ticketLink: "/dogodki/day-1/likovna-kolonija",
         disclaimer:
           "Priporočamo prisotnost vsaj 2 dni, saj bomo ob zaključku festivala organizirali razstavo slik, ki bo odprta za javnost.",
-        callToAction: "Nakup vstopnic",
+        callToAction: "Prijava",
       },
       {
         id: 3,
@@ -92,9 +92,9 @@ const tickets = [
         ticketDescription:
           "so namenjene otrokom od 5. do 9. razreda. Spoznali bodo osnove gledališča ter se naučili, kako uporabiti različne materiale za ustvarjanje odrske scenografije. Skozi zabavne in interaktivne dejavnosti bodo otroci razvijali svojo domišljijo, ustvarjalnost in timsko delo.",
         price: 0,
-        ticketLink: "",
+        ticketLink: "/dogodki/day-1/kreativne-delavnice",
         disclaimer: "za otroke 5.-9. razred, omejitev 20 udeležencev.",
-        callToAction: "Nakup vstopnic",
+        callToAction: "Prijava",
       },
     ],
   },
@@ -109,7 +109,7 @@ const tickets = [
         ticketDescription:
           "je nepozabno doživetje, ki ga ne smete zamuditi. Pridružite se nam na ogledu, ki vključuje tudi Borštnikovo hišo in prikaz kovaštva.",
         price: 0,
-        ticketLink: "",
+        ticketLink: "/dogodki/day-1/dozivi-cerklje",
         disclaimer:
           "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
         callToAction: "Več",
@@ -121,7 +121,7 @@ const tickets = [
         ticketDescription:
           "bo potekala 21. junija ob 11. uri na vrtu Borštnikove domačije. Dogodek je odprt tudi za goste. Lepo vabljeni.",
         price: 0,
-        ticketLink: "",
+        ticketLink: "/dogodki/day-1/novinarska-konferenca",
         disclaimer: "",
         callToAction: "Več",
       },
@@ -132,7 +132,7 @@ const tickets = [
         ticketDescription:
           "bo 23. junija ob 17. uri na vrtu Borštnikove domačije. Vstop je prost. Ne zamudite te priložnosti za vpogled v svet vrhunskih umetnikov.",
         price: 0,
-        ticketLink: "",
+        ticketLink: "/dogodki/day-3/klepet-ob-kavi",
         disclaimer: "",
         callToAction: "Več",
       },
@@ -210,11 +210,13 @@ function ActiveTicketType({
           )}
 
           <div className="flex flex-col gap-4">
-            <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-              {ticketPerType.callToAction}
+            <Button asChild withIcon="trailing" intent="outline-black">
+              <a href={ticketPerType.ticketLink}>
+                {ticketPerType.callToAction}
 
-              <IconChevronRight className="h-5 w-5" />
-            </ButtonLink>
+                <IconChevronRight className="h-5 w-5" />
+              </a>
+            </Button>
           </div>
         </div>
       )}
@@ -291,7 +293,11 @@ export default function Tickets() {
               <div className="flex w-full items-center border-b border-neutral-400 pb-2">
                 <p className="w-2/12 font-bold">Cena</p>
 
-                <p className="w-10/12">{activeTicketPerType.price} €</p>
+                <p className="w-10/12">
+                  {activeTicketPerType.price === 0
+                    ? "Brezplačno"
+                    : `${activeTicketPerType.price} €`}
+                </p>
               </div>
 
               {activeTicketPerType.priceStudents && (
@@ -313,10 +319,13 @@ export default function Tickets() {
             )}
 
             <div className="flex gap-4">
-              <ButtonLink withIcon="trailing" href="/" intent="outline-black">
-                {activeTicketPerType.callToAction}
-                <IconChevronRight className="h-5 w-5" />
-              </ButtonLink>
+              <Button asChild withIcon="trailing" intent="outline-black">
+                <a href={activeTicketPerType.ticketLink}>
+                  {activeTicketPerType.callToAction}
+
+                  <IconChevronRight className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
