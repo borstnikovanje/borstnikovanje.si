@@ -19,10 +19,7 @@ type ProgrammeActivityProps = {
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <a
-      href={programmeActivity.eventLink}
-      className="flex flex-col gap-6 border-t border-primary-foreground pt-4 text-primary-foreground first:border-transparent lg:flex-row"
-    >
+    <div className="flex flex-col gap-6 border-t border-primary-foreground pt-4 text-primary-foreground first:border-transparent lg:flex-row">
       <div className="flex w-full flex-col gap-4 lg:w-7/12">
         <div className="flex flex-col gap-2">
           <p>
@@ -36,7 +33,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
         <div className="flex flex-col items-center gap-4 lg:flex-row">
           <Button asChild size="small" intent="outline-black">
             <a
-              className="flex w-full items-center justify-center lg:w-auto"
+              className="w-full items-center justify-center gap-1 lg:w-auto"
               href={programmeActivity.eventLink}
             >
               Nakup vstopnic
@@ -46,7 +43,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
 
           <Button asChild size="small" intent="outline-black">
             <a
-              className="flex w-full items-center justify-center lg:w-auto"
+              className="w-full items-center justify-center gap-1 lg:w-auto"
               href={programmeActivity.eventLink}
             >
               Več o dogodku
@@ -79,7 +76,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           </p>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -93,7 +90,7 @@ export default function Programme({ events }: ProgrammeProps) {
   const currentDay = events[selectedDay];
 
   return (
-    <section className="bg-hero bg-cover bg-no-repeat py-10 text-white lg:py-32">
+    <section className="bg-hero bg-cover bg-center bg-no-repeat py-10 text-white lg:py-32">
       <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6 lg:gap-8">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-0">
           <div className="flex w-full items-center justify-end gap-4">
