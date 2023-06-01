@@ -24,6 +24,7 @@ module.exports = {
         newsletter:
           "url('/photos/background-images/background-newsletter.jpg')",
         linktree: "url('/photos/background-images/background-linktree.jpg')",
+        donate: "url('/photos/background-images/bg-donate.jpg')",
       },
     },
   },

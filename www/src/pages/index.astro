@@ -1,5 +1,6 @@
 ---
 import AccordionEvents from "../components/common/AccordionEvents";
+import Donate from "../components/common/Donate";
 import Hero from "../components/common/Hero.astro";
 import Newsletter from "../components/common/Newsletter";
 import OurTeam from "../components/common/OurTeam.astro";
@@ -17,7 +18,7 @@ const events = await getCollection("events");
   <AccordionEvents client:idle />
   <ProgrammeLandingPage events={events} client:visible />
   <Tickets client:visible />
-  <div class="bg-nav-gradient py-32"></div>
+  <Donate />
   <OurTeam />
   <Newsletter />
 </Layout>
