@@ -1,0 +1,39 @@
+---
+import Button, { buttonVariants } from "../components/ui/Button";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Doniraj">
+  <section class="py-12 lg:py-32">
+    <div class="mx-auto w-11/12 max-w-screen-xl">
+      <div class="flex flex-col gap-6">
+        <h1 class="font-tan-pearl text-5xl uppercase lg:text-7xl">Donacije</h1>
+
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-12">
+          <p class="w-full">
+            Podprite naše delo in prispevajte k razvoju umetnosti ter kulturi s
+            svojo donacijo. Vaš prispevek nam omogoča organizacijo raznolikih
+            dogodkov, ustvarjanje umetniških projektov in spodbujanje talentov.
+            Z vašo pomočjo lahko ohranjamo živahno in raznoliko kulturno sceno
+            ter ustvarjamo nepozabne izkušnje za naše občinstvo.
+          </p>
+          <p class="w-full">
+            Vsak prispevek šteje in vsaka donacija je dragocena. Skupaj gradimo
+            boljšo prihodnost umetnosti. Hvala za vašo podporo!
+          </p>
+        </div>
+
+        <a
+          class={buttonVariants({
+            intent: "outline-black",
+            size: "base",
+            fullWidth: true,
+          })}
+          href="https://donate.stripe.com/eVaeXQ97O3g2cHC5kk?locale=sl"
+        >
+          Doniraj
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

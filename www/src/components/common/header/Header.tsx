@@ -55,7 +55,9 @@ export default function Header() {
           {/* ADD TW MERGE TO REMOVE DIVS IN SUCH CASES */}
           <div className="hidden lg:block">
             <Button asChild intent="white" size="small">
-              <a href="/nakup-kart">Nakup kart</a>
+              <a href="https://olaii.com/event/3093/festival-borstnikovanje-3-dnevna-vstopnica?ref=KSMUMVX">
+                Nakup kart
+              </a>
             </Button>
           </div>
 

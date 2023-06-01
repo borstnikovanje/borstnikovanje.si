@@ -87,8 +87,10 @@ export default function TeamMembers({ teamMembers }: TeamMembersProps) {
         >
           <Accordion.Header>
             <Accordion.Trigger
-              className={`w-full ${
-                accordionActiveItem === teamMember.id ? "" : "text-neutral-400"
+              className={`w-full transition-colors ${
+                accordionActiveItem === teamMember.id
+                  ? ""
+                  : "text-neutral-400 hover:text-neutral-950"
               }`}
             >
               <TeamMemberTrigger teamMember={teamMember} />
