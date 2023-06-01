@@ -1,4 +1,8 @@
-import { IconArrowNarrowRight } from "@tabler/icons-react";
+import {
+  IconArrowNarrowRight,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -102,9 +106,30 @@ export default function TeamMembers({ teamMembers }: TeamMembersProps) {
           >
             <Accordion.Content
               ref={(ref) => (contentRefs.current[index] = ref)}
-              className="mt-4 flex flex-col gap-4 overflow-hidden lg:flex-row"
+              className="mt-4 flex flex-col gap-4 overflow-hidden lg:flex-row lg:justify-between"
             >
-              <p className="w-full lg:w-5/12">{teamMember.data.description}</p>
+              <div className="flex flex-col gap-2">
+                <p className="w-full lg:w-5/12">
+                  {teamMember.data.description}
+                </p>
+
+                {(teamMember.data.instagramLink ||
+                  teamMember.data.linkedInLink) && (
+                  <div className="flex items-center gap-2">
+                    {teamMember.data.instagramLink && (
+                      <a href={teamMember.data.instagramLink}>
+                        <IconBrandInstagram />
+                      </a>
+                    )}
+
+                    {teamMember.data.linkedInLink && (
+                      <a href={teamMember.data.linkedInLink}>
+                        <IconBrandLinkedin />
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
 
               <div className="flex w-full lg:w-7/12 lg:justify-end">
                 <img
