@@ -78,6 +78,9 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
             {programmeActivity.price === 0
               ? "Brezplačno"
               : `${programmeActivity.price} €`}
+
+            {programmeActivity.priceStudents &&
+              ` (${programmeActivity.priceStudents} € študenti, upokojenci)`}
           </p>
         </div>
       </div>
