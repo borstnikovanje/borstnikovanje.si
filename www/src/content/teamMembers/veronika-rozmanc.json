@@ -5,5 +5,7 @@
   "description": "Veronika Rožmanc se je s številnimi nagradami že uveljavila tako doma kot v tujini. Trenutno zaključuje študij design managementa, kjer nadgrajuje svoje znanje in veščine. Poleg tega je tudi vodja kreativne ekipe konference Fanfara, kjer uspešno združuje svoje strokovno znanje z vodenjem ekipe. S svojim šotorom OLI pa je pridobila naziv 'Naj mladinski startup 2019', kar dodatno potrjuje njeno odličnost na področju grafičnega oblikovanja, kreativnosti in ustvarjanja enotnih zgodb ter blagovnih znamk.",
   "photo": "/photos/team-members/veronika-rozmanc.jpg",
   "instagramLink": "https://www.instagram.com/veronikarozmanc/",
-  "linkedInLink": "https://www.linkedin.com/in/veronikarozmanc/"
+  "linkedInLink": "https://www.linkedin.com/in/veronikarozmanc/",
+  "order": 5,
+  "highlighted": true
 }

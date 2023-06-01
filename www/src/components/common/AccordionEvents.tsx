@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
-import ButtonLink from "../ui/ButtonLink";
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
 
@@ -17,14 +16,14 @@ const events = [
     title: "Klepet ob kavi",
     description:
       "Prisluhnite pogovoru z Borštnikovimi nagrajenci, ki ga bo vodila igralka Zvezdana Mlakar, in stopite v dialog z njimi tudi vi.",
-    href: "/klepet-ob-kavi",
+    href: "/dogodki/day-3/klepet-ob-kavi",
   },
   {
     id: 3,
     title: "Novinarska konferenca",
     description:
       "Izvedite več o festivalu, vseh prihajajočih dogodkih, predstavah in delavnicah iz prve roke ter spoznajte ekipo festivala.",
-    href: "/novinarska-konferenca",
+    href: "/dogodki/day-1/novinarska-konferenca",
   },
 ];
 

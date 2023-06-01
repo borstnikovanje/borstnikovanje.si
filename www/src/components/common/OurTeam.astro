@@ -1,0 +1,33 @@
+---
+import TeamMembers from "./TeamMembers";
+import { getCollection } from "astro:content";
+
+const teamMembersRaw = await getCollection("teamMembers");
+
+const teamMembers = teamMembersRaw
+  .filter((teamMember) => teamMember.data.highlighted)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="py-10 lg:py-20">
+  <div
+    class="mx-auto flex w-11/12 max-w-screen-xl flex-col items-center gap-10"
+  >
+    <div class="text-center">
+      <h2 class="font-tan-pearl text-4xl lg:text-6xl">Naša ekipa</h2>
+    </div>
+
+    <div
+      class="mx-auto flex w-full max-w-2xl flex-col items-center gap-4 text-center"
+    >
+      <p>
+        Naša ekipa je sestavljena iz strastnih in predanih ljubiteljev
+        gledališča, umetnosti in kulture. Skupaj si prizadevamo, da bi ustvarili
+        nepozabno izkušnjo za obiskovalce našega festivala in da bi hkrati
+        ohranili dediščino Ignacija Borštnika.
+      </p>
+    </div>
+
+    <TeamMembers teamMembers={teamMembers} client:visible />
+  </div>
+</section>;

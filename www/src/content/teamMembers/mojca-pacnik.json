@@ -1,0 +1,10 @@
+{
+  "firstName": "Mojca",
+  "lastName": "Pačnik",
+  "role": "Idejni vodja",
+  "description": "Mojca opis",
+  "photo": "/photos/team-members/mojca-pacnik.jpg",
+  "linkedInLink": "https://www.linkedin.com/in/mojca-pacnik/",
+  "order": 1,
+  "highlighted": true
+}

@@ -2,7 +2,7 @@
 import AccordionEvents from "../components/common/AccordionEvents";
 import Hero from "../components/common/Hero.astro";
 import Newsletter from "../components/common/Newsletter";
-import OurTeam from "../components/common/OurTeam";
+import OurTeam from "../components/common/OurTeam.astro";
 import ProgrammeLandingPage from "../components/common/ProgrammeLandingPage";
 import Tickets from "../components/common/Tickets";
 import Layout from "../layouts/Layout.astro";
@@ -18,6 +18,6 @@ const events = await getCollection("events");
   <ProgrammeLandingPage events={events} client:visible />
   <Tickets client:visible />
   <div class="bg-nav-gradient py-32"></div>
-  <OurTeam client:visible />
+  <OurTeam />
   <Newsletter />
 </Layout>

@@ -1,0 +1,11 @@
+{
+  "firstName": "Mark",
+  "lastName": "Djuraševič",
+  "role": "Vodja PR",
+  "description": "Mark opis",
+  "photo": "/photos/team-members/mojca-pacnik.jpg",
+  "instagramLink": "https://www.instagram.com/mark_djurasevic/",
+  "linkedInLink": "https://www.linkedin.com/in/mark-djura%C5%A1evi%C4%8D-29532b134/",
+  "order": 6,
+  "highlighted": true
+}
