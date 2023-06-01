@@ -11,9 +11,12 @@ type ProgrammeActivityProps = {
     time: string;
     location: string;
     price: number;
+    priceStudents?: number | undefined;
     title: string;
     eventType: string;
     eventLink: string;
+    callToActionLink?: string | undefined;
+    callToActionTitle?: string | undefined;
   };
 };
 
@@ -31,15 +34,17 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
         </div>
 
         <div className="flex flex-col items-center gap-4 lg:flex-row">
-          <Button asChild size="small" intent="outline-black">
-            <a
-              className="w-full items-center justify-center gap-1 lg:w-auto"
-              href={programmeActivity.eventLink}
-            >
-              Nakup vstopnic
-              <IconChevronRight className="h-4 w-4" />
-            </a>
-          </Button>
+          {programmeActivity.callToActionLink && (
+            <Button asChild size="small" intent="outline-black">
+              <a
+                className="w-full items-center justify-center gap-1 lg:w-auto"
+                href={programmeActivity.callToActionLink}
+              >
+                {programmeActivity.callToActionTitle}
+                <IconChevronRight className="h-4 w-4" />
+              </a>
+            </Button>
+          )}
 
           <Button asChild size="small" intent="outline-black">
             <a

@@ -8,10 +8,12 @@
       "time": "Cel dan",
       "location": "Borštnikov vrt",
       "price": 0,
-      "title": "Likovna kolonija",
+      "title": "Slikarska kolonija",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-1/likovna-kolonija"
+      "eventLink": "/dogodki/day-1/likovna-kolonija",
+      "callToActionLink": "/prijava-kolonija",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Sreda, 21. junij",
@@ -31,7 +33,9 @@
       "title": "Kreativne delavnice",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-1/kreativne-delavnice"
+      "eventLink": "/dogodki/day-1/kreativne-delavnice",
+      "callToActionLink": "/prijava-delavnice",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Sreda, 21. junij",
@@ -42,7 +46,9 @@
       "title": "Delavnica z Markom Mandićem",
       "eventType": "Delavnica",
       "highlighted": true,
-      "eventLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX"
+      "eventLink": "/dogodki/day-1/delavnica-marko-mandic",
+      "callToActionLink": "/https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
     },
     {
       "date": "Sreda, 21. junij",
@@ -52,7 +58,9 @@
       "title": "Doživi Cerklje",
       "eventType": "Voden ogled",
       "highlighted": false,
-      "eventLink": "/dogodki/day-1/dozivi-cerklje"
+      "eventLink": "/dogodki/day-1/dozivi-cerklje",
+      "callToActionLink": "/prijava-cerklje-day-1",
+      "callToActionTitle": "Prijava"
     },
     {
       "date": "Sreda, 21. junij",
@@ -63,7 +71,9 @@
       "title": "Ne ti meni Alice (Once Again)",
       "eventType": "Predstava",
       "highlighted": true,
-      "eventLink": "https://olaii.com/event/3084/festival-borstnikovanje-ne-ti-meni-alice-once-again?ref=KSMUMVX"
+      "eventLink": "/dogodki/day-1/ne-ti-meni-alice",
+      "callToActionLink": "https://olaii.com/event/3084/festival-borstnikovanje-ne-ti-meni-alice-once-again?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
     }
   ]
 }
