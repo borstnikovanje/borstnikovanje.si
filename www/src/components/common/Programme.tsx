@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../ui/Button";
-import { IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowUpRight, IconChevronRight } from "@tabler/icons-react";
 import type { CollectionEntry } from "astro:content";
 
 // TODO
@@ -23,15 +23,37 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
       href={programmeActivity.eventLink}
       className="flex flex-col gap-6 border-t border-primary-foreground pt-4 text-primary-foreground first:border-transparent lg:flex-row"
     >
-      <div className="flex w-full flex-col gap-2 lg:w-7/12">
-        <p>
-          {programmeActivity.date} {"->"} {programmeActivity.time}
-        </p>
-        <p className="text-2xl font-medium leading-normal lg:text-3xl">
-          {programmeActivity.title}
-        </p>
+      <div className="flex w-full flex-col gap-4 lg:w-7/12">
+        <div className="flex flex-col gap-2">
+          <p>
+            {programmeActivity.date} {"->"} {programmeActivity.time}
+          </p>
+          <p className="text-2xl font-medium leading-normal lg:text-3xl">
+            {programmeActivity.title}
+          </p>
+        </div>
 
-        <IconArrowUpRight className="h-7 w-7" />
+        <div className="flex flex-col items-center gap-4 lg:flex-row">
+          <Button asChild size="small" intent="outline-black">
+            <a
+              className="flex w-full items-center justify-center lg:w-auto"
+              href={programmeActivity.eventLink}
+            >
+              Nakup vstopnic
+              <IconChevronRight className="h-4 w-4" />
+            </a>
+          </Button>
+
+          <Button asChild size="small" intent="outline-black">
+            <a
+              className="flex w-full items-center justify-center lg:w-auto"
+              href={programmeActivity.eventLink}
+            >
+              Več o dogodku
+              <IconChevronRight className="h-4 w-4" />
+            </a>
+          </Button>
+        </div>
       </div>
 
       <div className="flex w-full flex-col gap-4 lg:w-5/12">
