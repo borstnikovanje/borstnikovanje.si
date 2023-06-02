@@ -2,7 +2,6 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { env } from 'hono/adapter';
 import { z } from 'zod';
-import { parseBody } from 'hono/utils/body';
 
 const newsletterSchema = z.object({
   email: z.string(),
@@ -22,10 +21,10 @@ app.post('/api/newsletter', async (context) => {
   const parsedBody = newsletterSchema.safeParse(requestBody);
 
   if (!parsedBody.success) {
-    return context.json('Error!');
+    return context.json({ message: 'Please enter an email.' }, 404);
   }
 
-  const converKitResponse = await fetch(API_URL, {
+  const convertKitResponse = await fetch(API_URL, {
     method: 'POST',
     body: JSON.stringify({
       api_key: API_KEY,
@@ -36,7 +35,12 @@ app.post('/api/newsletter', async (context) => {
     },
   });
 
-  const convertKitResponseBody = await converKitResponse.json();
+  if (!convertKitResponse.ok) {
+    const convertKitResponseBody: { message: string; error: string } = await convertKitResponse.json();
+    return context.json({ message: convertKitResponseBody.message }, 404);
+  }
+
+  const convertKitResponseBody = await convertKitResponse.json();
 
   return context.json(convertKitResponseBody);
 });
