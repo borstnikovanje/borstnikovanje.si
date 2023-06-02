@@ -28,27 +28,27 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           ? programmeActivity.callToActionLink
           : programmeActivity.eventLink
       }
-      className="flex flex-col gap-6 border-t border-white pt-4 first:border-transparent lg:flex-row"
+      className="flex flex-col gap-6 border-t border-primary-foreground pt-4 first:border-transparent lg:flex-row"
     >
       <div className="flex w-full flex-col gap-2 lg:w-7/12">
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
-        <p className="text-2xl font-medium leading-normal text-white lg:text-3xl">
+        <p className="leading-normallg:text-3xl text-2xl font-medium">
           {programmeActivity.title}
         </p>
 
-        <IconArrowUpRight className="h-7 w-7 text-white" />
+        <IconArrowUpRight className="h-7 w-7 text-primary-foreground" />
       </div>
 
       <div className="flex w-full flex-col gap-4 lg:w-5/12">
-        <div className="flex w-full items-center border-b border-white pb-2">
+        <div className="flex w-full items-center border-b border-primary-foreground pb-2">
           <p className="w-3/12">Kje</p>
 
           <p className="w-9/12">{programmeActivity.location}</p>
         </div>
 
-        <div className="flex w-full items-center border-b border-white pb-2">
+        <div className="flex w-full items-center border-b border-primary-foreground pb-2">
           <p className="w-3/12">Kaj</p>
 
           <p className="w-9/12">{programmeActivity.eventType}</p>
@@ -83,7 +83,7 @@ export default function ProgrammeLandingPage({
   const currentDay = events[selectedDay];
 
   return (
-    <section className="bg-programme bg-cover bg-no-repeat py-10 text-white lg:py-32">
+    <section className="bg-donate bg-cover bg-center bg-no-repeat py-10 text-primary-foreground lg:py-32">
       <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6 lg:gap-8">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-0">
           <p className="font-tan-pearl text-2xl lg:text-3xl">
@@ -101,8 +101,8 @@ export default function ProgrammeLandingPage({
                 onClick={() => setSelectedDay(festivalDay.data.dayNumber)}
                 intent={
                   selectedDay === festivalDay.data.dayNumber
-                    ? "white"
-                    : "outline-white"
+                    ? "primary"
+                    : "outline-black"
                 }
                 key={festivalDay.data.dayNumber}
               >
@@ -133,7 +133,7 @@ export default function ProgrammeLandingPage({
             </p>
 
             <div>
-              <Button asChild intent="outline-white">
+              <Button asChild intent="outline-black">
                 <a href="/program">Poglej vse dogodke</a>
               </Button>
             </div>
