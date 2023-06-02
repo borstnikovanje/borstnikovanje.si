@@ -15,7 +15,7 @@ const tickets = [
         ticketDescription: "za večerne dogodke (predstava ali koncert).",
         price: 16,
         priceStudents: 12,
-        ticketLink: "",
+        ticketLink: "/nakup-vstopnic",
         callToAction: "Nakup vstopnic",
       },
       {
@@ -26,7 +26,7 @@ const tickets = [
           "vključuje vse 3 večerne festivalske dogodke (obe predstavi in koncert).",
         price: 39,
         priceStudents: 30,
-        ticketLink: "",
+        ticketLink: "/nakup-vstopnic",
         callToAction: "Nakup vstopnic",
       },
       {
@@ -36,7 +36,7 @@ const tickets = [
         ticketDescription:
           "vključuje možnost izbire sedeža, dobrodošlico na Borštnikovi domačiji, pijačo in domače dobrote ter voden ogled Borštnikove rojstne hiše.",
         price: 50,
-        ticketLink: "",
+        ticketLink: "/nakup-vstopnic",
         disclaimer:
           "ob nakupu 10 Borštnikovih vstopnic vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
         callToAction: "Nakup vstopnic",
@@ -55,7 +55,7 @@ const tickets = [
           "vam omogočajo, da razvijete svoje gledališke spretnosti, izrazite svojo ustvarjalnost in se poglobite v svet gledališča.",
         price: 35,
         priceStudents: 25,
-        ticketLink: "",
+        ticketLink: "/nakup-vstopnic",
         disclaimer:
           "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
         callToAction: "Nakup vstopnic",
@@ -68,7 +68,7 @@ const tickets = [
           "vam omogočajo, da razvijete svoje gledališke spretnosti, izrazite svojo ustvarjalnost in se poglobite v svet gledališča.",
         price: 87,
         priceStudents: 62,
-        ticketLink: "",
+        ticketLink: "/nakup-vstopnic",
         disclaimer:
           "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
         callToAction: "Nakup vstopnic",
@@ -83,7 +83,7 @@ const tickets = [
         ticketLink: "/dogodki/day-1/likovna-kolonija",
         disclaimer:
           "Priporočamo prisotnost vsaj 2 dni, saj bomo ob zaključku festivala organizirali razstavo slik, ki bo odprta za javnost.",
-        callToAction: "Prijava",
+        callToAction: "Več",
       },
       {
         id: 3,
@@ -94,7 +94,7 @@ const tickets = [
         price: 0,
         ticketLink: "/dogodki/day-1/kreativne-delavnice",
         disclaimer: "za otroke 5.-9. razred, omejitev 20 udeležencev.",
-        callToAction: "Prijava",
+        callToAction: "Več",
       },
     ],
   },
@@ -112,7 +112,7 @@ const tickets = [
         ticketLink: "/dogodki/day-1/dozivi-cerklje",
         disclaimer:
           "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
-        callToAction: "Več",
+        callToAction: "Prijava",
       },
       {
         id: 1,

@@ -23,11 +23,7 @@ type ProgrammeActivityProps = {
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
     <a
-      href={
-        programmeActivity.callToActionLink
-          ? programmeActivity.callToActionLink
-          : programmeActivity.eventLink
-      }
+      href={programmeActivity.eventLink}
       className="flex flex-col gap-6 border-t border-primary-foreground pt-4 first:border-transparent lg:flex-row"
     >
       <div className="flex w-full flex-col gap-2 lg:w-7/12">
