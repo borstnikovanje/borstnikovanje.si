@@ -4,6 +4,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
+const API_URL = import.meta.env.PUBLIC_API_URL_NEWSLETTER;
+
 type NewsletterForm = {
   email: string;
 };
@@ -24,17 +26,31 @@ export default function NewsletterForm() {
     setStatus("fetching");
 
     try {
-      const response = await fetch("http://127.0.0.1:8787/api/newsletter", {
+      const response = await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify({ email: data.email }),
       });
 
+      if (!response.ok) {
+        const responseBody = await response.json();
+        toast.error(responseBody.message);
+      }
+
       const responseBody = await response.json();
 
+      if (responseBody.subscription.state === "active") {
+        toast.error("Ste že prijavljeni na e-novičke.");
+        setStatus("idle");
+        reset();
+        return;
+      }
+
+      toast.success(
+        "Uspešno ste se naročili. Potrdite vašo naročnino na emailu."
+      );
       setStatus("idle");
-      reset();
     } catch (error) {
-      toast.error("There was an error!");
+      toast.error("Napaka! Poskusite znova.");
       setStatus("idle");
     }
   };
@@ -42,14 +58,14 @@ export default function NewsletterForm() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
-        <div className="flex w-full items-center">
+        <div className="flex h-full w-full items-center">
           <div className="w-full">
             <label htmlFor="emailInput" className="sr-only">
               E-mail
             </label>
             <input
               {...register("email", { required: true })}
-              className="w-full border border-primary-foreground bg-transparent p-2 placeholder:text-neutral-600"
+              className="h-full w-full border border-primary-foreground bg-transparent p-2 placeholder:text-neutral-600"
               type="email"
               placeholder="ime.priimek@gmail.com"
               id="emailInput"
@@ -58,7 +74,7 @@ export default function NewsletterForm() {
 
           <button className="flex h-full items-center border border-transparent bg-primary-foreground p-2 text-primary">
             {status === "idle" && <IconChevronRight className="text-primary" />}
-            {status === "fetching" && <LoadingSpinner />}
+            {status === "fetching" && <LoadingSpinner size="base" />}
           </button>
         </div>
 
