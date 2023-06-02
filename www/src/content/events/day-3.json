@@ -8,12 +8,10 @@
       "time": "Cel dan",
       "location": "Borštnikov vrt",
       "price": 0,
-      "title": "Likovna kolonija",
+      "title": "Slikarska kolonija",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-3/likovna-kolonija",
-      "callToActionLink": "/prijava-kolonija",
-      "callToActionTitle": "Prijava"
+      "eventLink": "/dogodki/day-3/likovna-kolonija"
     },
     {
       "date": "Petek, 23. junij",
@@ -23,9 +21,7 @@
       "title": "Kreativne delavnice",
       "eventType": "Delavnica",
       "highlighted": false,
-      "eventLink": "/dogodki/day-3/kreativne-delavnice",
-      "callToActionLink": "/prijava-delavnice-3",
-      "callToActionTitle": "Prijava"
+      "eventLink": "/dogodki/day-3/kreativne-delavnice"
     },
     {
       "date": "Petek, 23. junij",
