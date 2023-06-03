@@ -108,7 +108,7 @@ export default function TeamMembers({ teamMembers }: TeamMembersProps) {
           >
             <Accordion.Content
               ref={(ref) => (contentRefs.current[index] = ref)}
-              className="mt-4 flex flex-col gap-4 overflow-hidden lg:flex-row lg:justify-between"
+              className="mt-4 flex flex-col gap-4 lg:flex-row lg:justify-between"
             >
               <div className="flex flex-col gap-2">
                 <p className="w-full lg:w-5/12">
@@ -133,7 +133,7 @@ export default function TeamMembers({ teamMembers }: TeamMembersProps) {
                 )}
               </div>
 
-              <div className="flex w-full lg:w-7/12 lg:justify-end">
+              <div className="flex w-full lg:w-full lg:justify-end">
                 <img
                   loading="eager"
                   width={300}
