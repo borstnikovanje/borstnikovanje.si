@@ -1,5 +1,122 @@
 ---
+import TeamMembers from "../components/common/TeamMembers";
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const teamMembersRaw = await getCollection("teamMembers");
+
+const teamMembers = teamMembersRaw
+  .filter((teamMember) => teamMember.data.highlighted)
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Nakup vstopnic" />
+<Layout title="Kdo smo">
+  <main class="flex flex-col gap-10 py-12 lg:pt-32">
+    <section class="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-14">
+      <div class="flex flex-col gap-6">
+        <h1 class="font-tan-pearl text-5xl uppercase lg:text-7xl">
+          Nakup vstopnic
+        </h1>
+
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-12">
+          <p class="w-full">
+            Pridružite se nam na vrhuncu gledališkega dogajanja in si zagotovite
+            svojo vstopnico že danes! Na naši spletni strani lahko enostavno in
+            hitro kupite vstopnice za različne predstave, dogodke in delavnice.
+            Izkoristite priložnost, da doživite nepozabne umetniške trenutke in
+            se prepustite čarobnosti gledališča.
+          </p>
+          <p class="w-full">
+            Z našim priročnim spletnim vmesnikom lahko pregledate razpored
+            dogodkov, izberete želeni termin in sedežno mesto ter svoje
+            vstopnice enostavno kupite v samo nekaj korakih. Ponujamo tudi
+            možnost nakupa VIP vstopnic, ki vam omogočajo poseben dostop in
+            udobje med dogodki.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-14 bg-donate bg-cover py-14">
+      <div class="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10">
+        <h1 class="font-tan-pearl text-5xl lg:text-6xl">
+          Vstopnice za dogodke
+        </h1>
+
+        <div class="grid grid-cols-3 gap-6">
+          <a href="/" class="relative">
+            <div class="h-full w-full rounded-md bg-white blur-sm"></div>
+
+            <div
+              class="absolute left-0 top-0 flex h-full w-full flex-col gap-4 p-8"
+            >
+              <p class="font-tan-pearl text-2xl leading-normal">
+                Ne ti meni Alice (Once Again)
+              </p>
+
+              <p>
+                EARLYBIRD vstopnica za večerni dogodek (predstavo ali koncert)
+              </p>
+
+              <div class="flex flex-col gap-2">
+                <div
+                  class="flex w-full items-center border-b border-neutral-400 pb-2"
+                >
+                  <p class="w-2/12 font-bold">Cena</p>
+
+                  <p class="w-10/12">16 €</p>
+                </div>
+
+                {
+                  true && (
+                    <div class="flex w-full items-center border-b border-neutral-400 pb-2">
+                      <div class="w-2/12" />
+
+                      <p class="w-10/12">
+                        12 € (dijaki, študenti, upokojenci){" "}
+                      </p>
+                    </div>
+                  )
+                }
+              </div>
+            </div>
+          </a>
+          <div class="w-full rounded-md bg-nav-gradient p-1">
+            <div class="flex h-full w-full flex-col gap-4 bg-white p-6">
+              <p class="font-tan-pearl text-2xl leading-normal">
+                Ne ti meni Alice (Once Again)
+              </p>
+
+              <p>
+                EARLYBIRD vstopnica za večerni dogodek (predstavo ali koncert)
+              </p>
+
+              <div class="flex flex-col gap-2">
+                <div
+                  class="flex w-full items-center border-b border-neutral-400 pb-2"
+                >
+                  <p class="w-2/12 font-bold">Cena</p>
+
+                  <p class="w-10/12">16 €</p>
+                </div>
+
+                {
+                  true && (
+                    <div class="flex w-full items-center border-b border-neutral-400 pb-2">
+                      <div class="w-2/12" />
+
+                      <p class="w-10/12">
+                        12 € (dijaki, študenti, upokojenci){" "}
+                      </p>
+                    </div>
+                  )
+                }
+              </div>
+            </div>
+          </div>
+          <div class="bg-white">Hi</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

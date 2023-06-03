@@ -55,7 +55,7 @@ export default function Header() {
           {/* ADD TW MERGE TO REMOVE DIVS IN SUCH CASES */}
           <div className="hidden lg:block">
             <Button asChild intent="white" size="small">
-              <a href="/nakup-vstopnic">Nakup kart</a>
+              <a href="/nakup-vstopnic">Nakup vstopnic</a>
             </Button>
           </div>
 
