@@ -1,0 +1,75 @@
+{
+  "dayNumber": 2,
+  "day": "Petek",
+  "date": "23. junij",
+  "activities": [
+    {
+      "date": "Petek, 23. junij",
+      "time": "Cel dan",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Slikarska kolonija",
+      "eventType": "Delavnica",
+      "highlighted": false,
+      "eventLink": "/dogodki/day-3/slikarska-kolonija"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "13.00 - 14.45",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Kreativne delavnice",
+      "eventType": "Delavnica",
+      "highlighted": false,
+      "eventLink": "/dogodki/day-3/kreativne-delavnice"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "14.00 - 18.00",
+      "location": "Borštnikov hram",
+      "price": 35,
+      "priceStudents": 25,
+      "title": "Delavnica s Klemnom Janežičem",
+      "eventType": "Delavnica",
+      "highlighted": true,
+      "eventLink": "/dogodki/day-3/delavnica-klemen-janezic",
+      "callToActionLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "15.30 - 16.45",
+      "location": "Borštnikov hram",
+      "price": 0,
+      "title": "Doživi Cerklje",
+      "eventType": "Voden ogled",
+      "highlighted": false,
+      "eventLink": "/dogodki/day-3/dozivi-cerklje",
+      "callToActionLink": "/prijava-cerklje-3",
+      "callToActionTitle": "Prijava"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "17.00 - 18.30",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Klepet ob kavi",
+      "eventType": "Pogovor z Borštnikovimi nagrajenci",
+      "highlighted": true,
+      "eventLink": "/dogodki/day-3/klepet-ob-kavi"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "20.00 - 21.30",
+      "location": "Borštnikov hram",
+      "price": 16,
+      "priceStudents": 12,
+      "title": "Katalena",
+      "eventType": "Koncert",
+      "highlighted": true,
+      "eventLink": "/dogodki/day-3/koncert-katalena",
+      "callToActionLink": "https://olaii.com/event/3087/festival-borstnikovanje-katalena?ref=KSMUMVX",
+      "callToActionTitle": "Nakup vstopnic"
+    }
+  ]
+}

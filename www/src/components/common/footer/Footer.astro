@@ -1,0 +1,52 @@
+---
+import FooterLink from "./FooterLink.astro";
+import { IconBrandFacebook, IconBrandInstagram } from "@tabler/icons-react";
+
+const date = new Date();
+
+const currentYear = date.getFullYear();
+---
+
+<footer class="mt-auto py-10 lg:pb-10 lg:pt-20">
+  <div
+    class="mx-auto flex w-11/12 max-w-screen-xl flex-col-reverse justify-between gap-10 lg:flex-row"
+  >
+    <div class="flex flex-col gap-2 lg:self-end">
+      <p class="font-tan-pearl text-3xl lg:text-6xl">Borštnikovanje</p>
+      <p class="text-neutral-500">Copyright © {currentYear} Borštnikovanje</p>
+    </div>
+
+    <div class="flex gap-20">
+      <div class="flex flex-col gap-2">
+        <FooterLink href="/program">Program</FooterLink>
+        <FooterLink href="/delavnice">Delavnice</FooterLink>
+        <FooterLink href="/kdo-smo">Kdo smo</FooterLink>
+      </div>
+
+      <div class="flex flex-col justify-between">
+        <div class="flex flex-col gap-2">
+          <FooterLink href="/doniraj">Doniraj</FooterLink>
+          <FooterLink href="/nakup-vstopnic">Nakup</FooterLink>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <FooterLink
+            href="https://www.facebook.com/borstnikovanje.si/"
+            title="Odpri Facebook"
+            aria-label="Odpri Facebook"
+          >
+            <IconBrandFacebook />
+          </FooterLink>
+
+          <FooterLink
+            href="https://www.instagram.com/borstnikovanje.si/"
+            title="Odpri Instagram"
+            aria-label="Odpri Instagram"
+          >
+            <IconBrandInstagram />
+          </FooterLink>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

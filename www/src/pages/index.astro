@@ -1,0 +1,24 @@
+---
+import AccordionEvents from "../components/common/AccordionEvents";
+import Donate from "../components/common/Donate";
+import Hero from "../components/common/Hero.astro";
+import Newsletter from "../components/common/Newsletter";
+import OurTeam from "../components/common/OurTeam.astro";
+import ProgrammeLandingPage from "../components/common/ProgrammeLandingPage";
+import Tickets from "../components/common/Tickets";
+import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const events = await getCollection("events");
+---
+
+<Layout title="Festival Borštnikovanje">
+  <Hero />
+  <AccordionEvents client:idle />
+  <ProgrammeLandingPage events={events} client:visible />
+  <Tickets client:visible />
+  <Donate />
+  <OurTeam />
+  <Newsletter client:visible />
+</Layout>
