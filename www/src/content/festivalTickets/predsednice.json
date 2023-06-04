@@ -4,5 +4,7 @@
   "priceStudents": 12,
   "location": "Borštnikov hram",
   "callToActionLink": "https://olaii.com/event/3086/festival-borstnikovanje-predsednice?ref=KSMUMVX",
-  "eventLink": "/dogodki/day-2/predsednice"
+  "eventLink": "/dogodki/day-2/predsednice",
+  "image": "/photos/tickets/predsednice.jpg",
+  "order": 2
 }

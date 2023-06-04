@@ -72,6 +72,8 @@ const festivalTicketsCollection = defineCollection({
     location: z.string(),
     callToActionLink: z.string(),
     eventLink: z.string().optional(),
+    image: z.string(),
+    order: z.number(),
   }),
 });
 

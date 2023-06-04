@@ -83,6 +83,8 @@ export default function Header() {
 
               <NavLink href="/kdo-smo">Kdo smo</NavLink>
 
+              <NavLink href="/doniraj">Doniraj</NavLink>
+
               {/* <NavLink href="/ali-ves">Ali veš?</NavLink> */}
 
               {/* <NavLink href="/galerija">Galerija</NavLink> */}

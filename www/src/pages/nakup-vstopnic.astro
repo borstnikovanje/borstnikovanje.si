@@ -1,11 +1,14 @@
 ---
+import { Image } from "@astrojs/image/components";
 import { IconChevronRight } from "@tabler/icons-react";
 import { buttonVariants } from "../components/ui/Button";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { twMerge } from "tailwind-merge";
 
-const tickets = await getCollection("festivalTickets");
+const ticketsRaw = await getCollection("festivalTickets");
+
+const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Nakup vstopnic">
@@ -43,11 +46,18 @@ const tickets = await getCollection("festivalTickets");
           Vstopnice za dogodke
         </h1>
 
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {
             tickets.map((ticket) => (
               <div class="w-full rounded-md bg-nav-gradient p-1">
                 <div class="flex h-full w-full flex-col gap-10 bg-grain p-6">
+                  <Image
+                    src={ticket.data.image}
+                    width={1059}
+                    height={412}
+                    format="jpg"
+                    alt={ticket.data.title}
+                  />
                   <p class="font-tan-pearl text-2xl leading-normal">
                     {ticket.data.title}
                   </p>
@@ -76,7 +86,7 @@ const tickets = await getCollection("festivalTickets");
                       class={twMerge(
                         buttonVariants({
                           intent: "outline-black",
-                          size: "base",
+                          size: "small",
                         }),
                         "flex items-center gap-1"
                       )}
@@ -91,7 +101,7 @@ const tickets = await getCollection("festivalTickets");
                         class={twMerge(
                           buttonVariants({
                             intent: "outline-black",
-                            size: "base",
+                            size: "small",
                           }),
                           "flex items-center gap-1"
                         )}

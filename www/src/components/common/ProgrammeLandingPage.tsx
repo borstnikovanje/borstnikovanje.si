@@ -27,9 +27,14 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
-        <p className="leading-normallg:text-3xl text-2xl font-medium">
-          {programmeActivity.title}
-        </p>
+        <div>
+          <a
+            href={programmeActivity.eventLink}
+            className="inline-block text-2xl font-medium leading-normal lg:text-3xl"
+          >
+            {programmeActivity.title}
+          </a>
+        </div>
 
         {programmeActivity.price <= 0 && (
           <div>
