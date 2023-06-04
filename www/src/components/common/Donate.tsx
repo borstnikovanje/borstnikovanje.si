@@ -11,7 +11,7 @@ export default function Donate() {
           prostovoljcov z donacijo. Hvala ker nas podpirate!
         </p>
 
-        <Button asChild intent="outline-black">
+        <Button asChild intent="gradient">
           <a href="https://donate.stripe.com/eVaeXQ97O3g2cHC5kk?locale=sl">
             Doniraj
           </a>
