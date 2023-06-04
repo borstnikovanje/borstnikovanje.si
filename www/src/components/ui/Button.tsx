@@ -41,6 +41,7 @@ export const buttonVariants = cva(
           "border-primary",
           "focus:ring-primary-foreground",
         ],
+        gradient: ["bg-nav-gradient", "text-primary", "font-medium"],
       },
       size: {
         small: "text-sm",

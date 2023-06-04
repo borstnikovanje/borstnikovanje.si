@@ -19,7 +19,7 @@ function Banner() {
             </svg>
           </div>
 
-          <p className="text-sm">Earlybird vstopnice so na voljo</p>
+          <p className="text-sm font-medium">Earlybird vstopnice so na voljo</p>
         </div>
 
         <a

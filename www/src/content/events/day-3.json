@@ -38,17 +38,7 @@
     },
     {
       "date": "Petek, 23. junij",
-      "time": "17.00 - 18.30",
-      "location": "Borštnikov vrt",
-      "price": 0,
-      "title": "Klepet ob kavi",
-      "eventType": "Pogovor z Borštnikovimi nagrajenci",
-      "highlighted": true,
-      "eventLink": "/dogodki/day-3/klepet-ob-kavi"
-    },
-    {
-      "date": "Petek, 23. junij",
-      "time": "18.00 - 19.15",
+      "time": "15.30 - 16.45",
       "location": "Borštnikov hram",
       "price": 0,
       "title": "Doživi Cerklje",
@@ -57,6 +47,16 @@
       "eventLink": "/dogodki/day-3/dozivi-cerklje",
       "callToActionLink": "/prijava-cerklje-3",
       "callToActionTitle": "Prijava"
+    },
+    {
+      "date": "Petek, 23. junij",
+      "time": "17.00 - 18.30",
+      "location": "Borštnikov vrt",
+      "price": 0,
+      "title": "Klepet ob kavi",
+      "eventType": "Pogovor z Borštnikovimi nagrajenci",
+      "highlighted": true,
+      "eventLink": "/dogodki/day-3/klepet-ob-kavi"
     },
     {
       "date": "Petek, 23. junij",

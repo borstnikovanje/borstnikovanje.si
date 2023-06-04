@@ -123,15 +123,15 @@ const MobileNavigationMenu = ({
                   </div>
 
                   <div className="absolute inset-x-0 bottom-0 flex w-full items-center justify-center gap-4 p-4">
-                    <a href="/">
+                    <a href="https://www.instagram.com/borstnikovanje.si/">
                       <IconBrandInstagram className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
                     </a>
 
-                    <a href="/">
+                    {/* <a href="/">
                       <IconBrandTwitter className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
-                    </a>
+                    </a> */}
 
-                    <a href="/">
+                    <a href="https://www.facebook.com/borstnikovanje.si/">
                       <IconBrandFacebook className="hover:text-primary-600 h-7 w-7 text-gray-900 transition-colors" />
                     </a>
                   </div>
