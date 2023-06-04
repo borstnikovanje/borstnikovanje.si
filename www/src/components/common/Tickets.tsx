@@ -322,7 +322,7 @@ export default function Tickets() {
             )}
 
             <div className="flex gap-4">
-              <Button asChild intent="gradient">
+              <Button asChild intent="outline-black">
                 <a
                   className="flex items-center justify-center gap-1"
                   href={activeTicketPerType.ticketLink}
