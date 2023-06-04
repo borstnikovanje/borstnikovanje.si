@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../ui/Button";
-import { IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowUpRight, IconChevronRight } from "@tabler/icons-react";
 import type { CollectionEntry } from "astro:content";
 
 // TODO
@@ -22,11 +22,8 @@ type ProgrammeActivityProps = {
 
 function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
   return (
-    <a
-      href={programmeActivity.eventLink}
-      className="flex flex-col gap-6 border-t border-primary-foreground pt-4 first:border-transparent lg:flex-row"
-    >
-      <div className="flex w-full flex-col gap-2 lg:w-7/12">
+    <div className="flex flex-col gap-6 border-t border-primary-foreground pt-4 first:border-transparent lg:flex-row">
+      <div className="flex w-full flex-col gap-2.5 lg:w-7/12">
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
@@ -34,7 +31,33 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           {programmeActivity.title}
         </p>
 
-        <IconArrowUpRight className="h-7 w-7 text-primary-foreground" />
+        {programmeActivity.price <= 0 && (
+          <div>
+            <Button asChild intent="outline-black">
+              <a
+                className="flex items-center gap-1"
+                href={programmeActivity.eventLink}
+              >
+                Več o dogodku
+                <IconChevronRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        )}
+
+        {programmeActivity.price > 0 && (
+          <div>
+            <Button asChild intent="outline-black">
+              <a
+                className="flex items-center gap-1"
+                href={programmeActivity.callToActionLink}
+              >
+                Nakup
+                <IconChevronRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
 
       <div className="flex w-full flex-col gap-4 lg:w-5/12">
@@ -63,7 +86,7 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
           </p>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 

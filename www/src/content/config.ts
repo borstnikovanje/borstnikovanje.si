@@ -63,9 +63,22 @@ const festivalEventsCollection = defineCollection({
   }),
 });
 
+const festivalTicketsCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    price: z.number(),
+    priceStudents: z.number().optional(),
+    location: z.string(),
+    callToActionLink: z.string(),
+    eventLink: z.string().optional(),
+  }),
+});
+
 export const collections = {
   events: eventsCollection,
   teamMembers: teamMembersCollection,
   festivalDays: festivalDaysCollection,
   festivalEvents: festivalEventsCollection,
+  festivalTickets: festivalTicketsCollection,
 };

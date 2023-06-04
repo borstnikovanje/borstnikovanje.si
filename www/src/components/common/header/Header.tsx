@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <nav className="bg-nav-gradient opacity-90">
+      <nav className="sticky top-0 z-10 bg-nav-gradient">
         <div className="mx-auto flex w-11/12 max-w-screen-xl items-center justify-between py-4">
           <a href="/" className="inline-flex" title="Domov" aria-label="Domov">
             <img
@@ -55,7 +55,7 @@ export default function Header() {
           {/* ADD TW MERGE TO REMOVE DIVS IN SUCH CASES */}
           <div className="hidden lg:block">
             <Button asChild intent="white" size="small">
-              <a href="/nakup-vstopnic">Nakup kart</a>
+              <a href="/nakup-vstopnic">Nakup vstopnic</a>
             </Button>
           </div>
 

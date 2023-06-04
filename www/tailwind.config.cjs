@@ -21,6 +21,8 @@ module.exports = {
         grain: "url('/photos/background-images/background-grain.jpg')",
         hero: "url('/photos/background-images/background-header.jpg')",
         programme: "url('/photos/background-images/background-programme.png')",
+        "programme-gradient":
+          "linear-gradient(98.73deg, #D782BB 25.89%, #E8D292 120.13%)",
         newsletter:
           "url('/photos/background-images/background-newsletter.jpg')",
         linktree: "url('/photos/background-images/background-linktree.jpg')",
