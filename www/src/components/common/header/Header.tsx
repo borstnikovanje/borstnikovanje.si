@@ -8,7 +8,7 @@ function Banner() {
     <div className="bg-grain">
       <div className="z-10 mx-auto flex w-11/12 max-w-screen-xl items-center justify-between py-2 lg:hidden">
         <div className="flex items-center gap-2">
-          <div className="items-center justify-center bg-programme-gradient p-1 text-white">
+          <div className="items-center justify-center bg-nav-gradient p-1 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ function Banner() {
 
         <a
           href="/nakup-vstopnic"
-          className="bg-programme-gradient px-4 py-1 text-sm font-bold text-white"
+          className="bg-nav-gradient px-4 py-1 text-sm font-bold text-white"
         >
           Nakup
         </a>
@@ -59,7 +59,7 @@ export default function Header() {
     <>
       <nav className="sticky top-0 z-30">
         <Banner />
-        <div className="bg-programme-gradient">
+        <div className="bg-nav-gradient">
           <div className="mx-auto flex w-11/12 max-w-screen-xl items-center justify-between py-4">
             <a
               href="/"
