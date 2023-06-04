@@ -81,6 +81,8 @@ export default function Header() {
 
               <NavLink href="/delavnice">Delavnice</NavLink>
 
+              <NavLink href="/o-festivalu">O festivalu</NavLink>
+
               <NavLink href="/kdo-smo">Kdo smo</NavLink>
 
               <NavLink href="/doniraj">Doniraj</NavLink>
