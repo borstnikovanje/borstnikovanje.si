@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <nav className="bg-nav-gradient opacity-90">
+      <nav className="sticky top-0 z-10 bg-nav-gradient opacity-90">
         <div className="mx-auto flex w-11/12 max-w-screen-xl items-center justify-between py-4">
           <a href="/" className="inline-flex" title="Domov" aria-label="Domov">
             <img
