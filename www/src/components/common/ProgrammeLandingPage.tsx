@@ -163,7 +163,7 @@ export default function ProgrammeLandingPage({
             </div>
           </div>
 
-          <div className="flex w-full flex-col gap-12 lg:w-9/12 lg:gap-8">
+          <div className="flex w-full flex-col gap-14 lg:w-9/12 lg:gap-8">
             {currentDay.data.activities
               .filter((programmeActivity) => programmeActivity.highlighted)
               .map((programmeActivity) => (

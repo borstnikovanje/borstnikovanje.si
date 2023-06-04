@@ -111,7 +111,7 @@ const tickets = [
         price: 0,
         ticketLink: "/dogodki/day-1/dozivi-cerklje",
         disclaimer:
-          "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
+          "Število mest je omejeno. Ogled traja 75 min.",
         callToAction: "Prijava",
       },
       {

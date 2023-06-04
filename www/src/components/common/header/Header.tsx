@@ -24,7 +24,7 @@ function Banner() {
 
         <a
           href="/nakup-vstopnic"
-          className="bg-nav-gradient px-4 py-1 text-sm font-bold text-white"
+          className="bg-nav-gradient px-4 py-1 text-sm font-medium text-white"
         >
           Nakup
         </a>
