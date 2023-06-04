@@ -82,7 +82,7 @@ const tickets = [
         price: 0,
         ticketLink: "/dogodki/day-1/likovna-kolonija",
         disclaimer:
-          "Priporočamo prisotnost vsaj 2 dni, saj bomo ob zaključku festivala organizirali razstavo slik, ki bo odprta za javnost.",
+          "bo potekala vse tri dni festivala  (21., 22. in 23. junija). Namenjena je vsem, ki že imajo slikarsko predznanje, in si želijo slikarsko interpetirati motive, povezane z Ignacijem Borštnikom.",
         callToAction: "Več",
       },
       {
@@ -322,7 +322,7 @@ export default function Tickets() {
             )}
 
             <div className="flex gap-4">
-              <Button asChild intent="outline-black">
+              <Button asChild intent="gradient">
                 <a
                   className="flex items-center justify-center gap-1"
                   href={activeTicketPerType.ticketLink}

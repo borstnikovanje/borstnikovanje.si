@@ -101,7 +101,7 @@ export default function AccordionEvents() {
                 >
                   {event.description}
                   <div>
-                    <Button asChild intent="outline-black">
+                    <Button asChild intent="gradient">
                       <a href={event.href}>Zanima me več</a>
                     </Button>
                   </div>
