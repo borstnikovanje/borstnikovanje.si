@@ -101,6 +101,13 @@ const MobileNavigationMenu = ({
 
                       <MobileNavigationMenuItem
                         closeMobileNavigationMenu={closeMobileNavigationMenu}
+                        href="/o-festivalu"
+                      >
+                        O festivalu
+                      </MobileNavigationMenuItem>
+
+                      <MobileNavigationMenuItem
+                        closeMobileNavigationMenu={closeMobileNavigationMenu}
                         href="/kdo-smo"
                       >
                         Kdo smo
