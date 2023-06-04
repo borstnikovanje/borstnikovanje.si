@@ -1,13 +1,9 @@
 ---
-import TeamMembers from "../components/common/TeamMembers";
+import { buttonVariants } from "../components/ui/Button";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const teamMembersRaw = await getCollection("teamMembers");
-
-const teamMembers = teamMembersRaw
-  .filter((teamMember) => teamMember.data.highlighted)
-  .sort((a, b) => a.data.order - b.data.order);
+const tickets = await getCollection("festivalTickets");
 ---
 
 <Layout title="Kdo smo">
@@ -37,82 +33,67 @@ const teamMembers = teamMembersRaw
       </div>
     </section>
 
-    <section class="flex flex-col gap-14 bg-donate bg-cover py-14">
+    <section class="flex flex-col gap-14 bg-donate bg-cover bg-center py-14">
       <div class="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-10">
-        <h1 class="font-tan-pearl text-5xl">Vstopnice za dogodke</h1>
+        <h1 class="font-tan-pearl text-4xl leading-normal lg:text-5xl">
+          Vstopnice za dogodke
+        </h1>
 
-        <div class="grid grid-cols-3 gap-6">
-          <a href="/" class="relative min-h-[600px]">
-            <div class="h-full w-full rounded-md bg-white blur-sm"></div>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {
+            tickets.map((ticket) => (
+              <div class="w-full rounded-md bg-nav-gradient p-1">
+                <div class="flex h-full w-full flex-col gap-10 bg-grain p-6">
+                  <p class="font-tan-pearl text-2xl leading-normal">
+                    {ticket.data.title}
+                  </p>
 
-            <div
-              class="absolute left-0 top-0 flex h-full w-full flex-col gap-4 p-8"
-            >
-              <p class="font-tan-pearl text-2xl leading-normal">
-                Ne ti meni Alice (Once Again)
-              </p>
-
-              <p>
-                EARLYBIRD vstopnica za večerni dogodek (predstavo ali koncert)
-              </p>
-
-              <div class="flex flex-col gap-2">
-                <div
-                  class="flex w-full items-center border-b border-neutral-400 pb-2"
-                >
-                  <p class="w-2/12 font-bold">Cena</p>
-
-                  <p class="w-10/12">16 €</p>
-                </div>
-
-                {
-                  true && (
+                  <div class="flex flex-col gap-2">
                     <div class="flex w-full items-center border-b border-neutral-400 pb-2">
-                      <div class="w-2/12" />
+                      <p class="w-2/12 font-bold">Cena</p>
 
-                      <p class="w-10/12">
-                        12 € (dijaki, študenti, upokojenci){" "}
-                      </p>
+                      <p class="w-10/12">{ticket.data.price} €</p>
                     </div>
-                  )
-                }
-              </div>
-            </div>
-          </a>
-          <div class="w-full rounded-md bg-nav-gradient p-1">
-            <div class="flex h-full w-full flex-col gap-4 bg-white p-6">
-              <p class="font-tan-pearl text-2xl leading-normal">
-                Ne ti meni Alice (Once Again)
-              </p>
 
-              <p>
-                EARLYBIRD vstopnica za večerni dogodek (predstavo ali koncert)
-              </p>
+                    {ticket.data.priceStudents && (
+                      <div class="flex w-full items-center border-b border-neutral-400 pb-2">
+                        <div class="w-2/12" />
 
-              <div class="flex flex-col gap-2">
-                <div
-                  class="flex w-full items-center border-b border-neutral-400 pb-2"
-                >
-                  <p class="w-2/12 font-bold">Cena</p>
+                        <p class="w-10/12">
+                          {ticket.data.priceStudents} € (dijaki, študenti,
+                          upokojenci){" "}
+                        </p>
+                      </div>
+                    )}
+                  </div>
 
-                  <p class="w-10/12">16 €</p>
+                  <div class="flex items-center gap-2">
+                    <a
+                      class={buttonVariants({
+                        intent: "outline-black",
+                        size: "base",
+                      })}
+                      href={ticket.data.callToActionLink}
+                    >
+                      Nakup
+                    </a>
+
+                    {ticket.data.eventLink && (
+                      <a
+                        class={buttonVariants({
+                          intent: "outline-black",
+                          size: "base",
+                        })}
+                        href={ticket.data.eventLink}
+                      >
+                        O dogodku
+                      </a>
+                    )}
+                  </div>
                 </div>
-
-                {
-                  true && (
-                    <div class="flex w-full items-center border-b border-neutral-400 pb-2">
-                      <div class="w-2/12" />
-
-                      <p class="w-10/12">
-                        12 € (dijaki, študenti, upokojenci){" "}
-                      </p>
-                    </div>
-                  )
-                }
               </div>
-            </div>
-          </div>
-          <div class="bg-white">Hi</div>
+            ))
+          }
         </div>
       </div>
     </section>

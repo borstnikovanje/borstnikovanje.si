@@ -98,37 +98,39 @@ export default function Programme({ events }: ProgrammeProps) {
   const currentDay = events[selectedDay];
 
   return (
-    <section className="bg-hero bg-cover bg-center bg-no-repeat py-10 text-white lg:py-32">
-      <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-6 lg:gap-8">
-        <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-0">
-          <div className="flex w-full items-center justify-end gap-4">
-            {events.map((festivalDay) => (
-              <Button
-                onClick={() => setSelectedDay(festivalDay.data.dayNumber)}
-                intent={
-                  selectedDay === festivalDay.data.dayNumber
-                    ? "primary"
-                    : "outline-black"
-                }
-                key={festivalDay.id}
-              >
-                <span className="hidden lg:block">
-                  {festivalDay.data.day}, {festivalDay.data.date}
-                </span>
+    <section className="bg-center bg-no-repeat text-white">
+      <div className="mx-auto w-11/12 max-w-screen-xl lg:bg-nav-gradient lg:p-2">
+        <div className="flex flex-col gap-6 bg-grain lg:gap-8 lg:p-10">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-0">
+            <div className="flex w-full items-center justify-between gap-4 lg:justify-end">
+              {events.map((festivalDay) => (
+                <Button
+                  onClick={() => setSelectedDay(festivalDay.data.dayNumber)}
+                  intent={
+                    selectedDay === festivalDay.data.dayNumber
+                      ? "primary"
+                      : "outline-black"
+                  }
+                  key={festivalDay.id}
+                >
+                  <span className="hidden lg:block">
+                    {festivalDay.data.day}, {festivalDay.data.date}
+                  </span>
 
-                <span className="lg:hidden">{festivalDay.data.day}</span>
-              </Button>
+                  <span className="lg:hidden">{festivalDay.data.day}</span>
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-12">
+            {currentDay.data.activities.map((programmeActivity) => (
+              <ProgrammeActivity
+                key={programmeActivity.time}
+                programmeActivity={programmeActivity}
+              />
             ))}
           </div>
-        </div>
-
-        <div className="flex flex-col gap-12">
-          {currentDay.data.activities.map((programmeActivity) => (
-            <ProgrammeActivity
-              key={programmeActivity.time}
-              programmeActivity={programmeActivity}
-            />
-          ))}
         </div>
       </div>
     </section>
