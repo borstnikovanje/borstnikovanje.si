@@ -11,7 +11,7 @@ import NewsletterForm from "../components/common/NewsletterForm";
 const links = [
   { title: "Več o Borštnikovanju", href: "/" },
   { title: "Program dogodka", href: "/program" },
-  { title: "Nakup kart", href: "/program" },
+  { title: "Nakup vstopnic", href: "/nakup-vstopnic" },
   { title: "Donacije", href: "/doniraj" },
 ];
 
@@ -41,16 +41,20 @@ const currentYear = date.getFullYear();
     </section>
 
     <section class="flex items-center gap-4">
-      <a href="/" title="Odpri Facebook" aria-label="Odpri Facebook">
+      <a
+        href="https://www.facebook.com/borstnikovanje.si/"
+        title="Odpri Facebook"
+        aria-label="Odpri Facebook"
+      >
         <FacebookIcon class="h-10 w-10" />
       </a>
 
-      <a href="/" title="Odpri Instagram" aria-label="Odpri Instagram">
+      <a
+        href="https://www.instagram.com/borstnikovanje.si/"
+        title="Odpri Instagram"
+        aria-label="Odpri Instagram"
+      >
         <InstagramIcon class="h-10 w-10" />
-      </a>
-
-      <a href="/" title="Pokliči na WhatsApp" aria-label="Pokliči na WhatsApp">
-        <WhatsAppIcon class="h-10 w-10" />
       </a>
     </section>
 

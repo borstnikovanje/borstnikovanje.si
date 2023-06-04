@@ -15,6 +15,9 @@ export async function getStaticPaths() {
 
 const { dogodek } = Astro.params;
 
+// TODO
+// FIX EARLY RETURNS
+
 if (!dogodek) {
   return "";
 }
@@ -65,7 +68,9 @@ const { Content } = await event.render();
           event.data.eventLink && (
             <div>
               <Button intent="outline-black">
-                <a href={event.data.eventLink}>Nakup vstopnic</a>
+                <a href={event.data.eventLink}>
+                  {event.data.price > 0 ? "Nakup vstopnic" : "Prijava"}
+                </a>
               </Button>
             </div>
           )
