@@ -27,9 +27,14 @@ function ProgrammeActivity({ programmeActivity }: ProgrammeActivityProps) {
         <p>
           {programmeActivity.date} {"->"} {programmeActivity.time}
         </p>
-        <p className="leading-normallg:text-3xl text-2xl font-medium">
-          {programmeActivity.title}
-        </p>
+        <div>
+          <a
+            href={programmeActivity.eventLink}
+            className="inline-block text-2xl font-medium leading-normal lg:text-3xl"
+          >
+            {programmeActivity.title}
+          </a>
+        </div>
 
         {programmeActivity.price <= 0 && (
           <div>
@@ -158,7 +163,7 @@ export default function ProgrammeLandingPage({
             </div>
           </div>
 
-          <div className="flex w-full flex-col gap-12 lg:w-9/12 lg:gap-8">
+          <div className="flex w-full flex-col gap-14 lg:w-9/12 lg:gap-8">
             {currentDay.data.activities
               .filter((programmeActivity) => programmeActivity.highlighted)
               .map((programmeActivity) => (

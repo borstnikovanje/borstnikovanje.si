@@ -24,7 +24,7 @@ function Banner() {
 
         <a
           href="/nakup-vstopnic"
-          className="bg-nav-gradient px-4 py-1 text-sm font-bold text-white"
+          className="bg-nav-gradient px-4 py-1 text-sm font-medium text-white"
         >
           Nakup
         </a>
@@ -82,6 +82,8 @@ export default function Header() {
               <NavLink href="/delavnice">Delavnice</NavLink>
 
               <NavLink href="/kdo-smo">Kdo smo</NavLink>
+
+              <NavLink href="/doniraj">Doniraj</NavLink>
 
               {/* <NavLink href="/ali-ves">Ali veš?</NavLink> */}
 

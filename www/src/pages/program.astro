@@ -7,13 +7,13 @@ const events = await getCollection("events");
 ---
 
 <Layout title="Program">
-  <section class="py-12 lg:py-32">
-    <div class="mx-auto w-11/12 max-w-screen-xl">
+  <main class="flex flex-col gap-14 pt-16 lg:pt-32">
+    <section class="mx-auto w-11/12 max-w-screen-xl">
       <div class="flex flex-col gap-6">
         <h1 class="font-tan-pearl text-5xl uppercase lg:text-7xl">Program</h1>
 
         <div class="flex flex-col gap-6 lg:flex-row lg:gap-12">
-          <p class="w-full">
+          <p class="w-full leading-loose">
             Na festivalu »Borštnikovanje« vas čaka bogat in raznolik program.
             Osrednji program festivala sestavljata večerni predstavi in
             zaključni koncert, dnevni spremljevalni program pa se razteza na
@@ -24,7 +24,7 @@ const events = await getCollection("events");
             kolonijo z zaključno razstavo ter pogovor z Borštnikovimi
             nagrajenci.
           </p>
-          <p class="w-full">
+          <p class="w-full leading-loose">
             Vstopnice za dogodke so že na volju na spletnem mestu Olaii ter
             prodajnih mestih OMW ter Trafika 3dva. Pohitite z nakupom in se
             pridružite živahnemu festivalskemu vzdušju. Če želite festival
@@ -33,8 +33,8 @@ const events = await getCollection("events");
           </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <Programme events={events} client:load />
+    <Programme events={events} client:load />
+  </main>
 </Layout>

@@ -106,6 +106,13 @@ const MobileNavigationMenu = ({
                         Kdo smo
                       </MobileNavigationMenuItem>
 
+                      <MobileNavigationMenuItem
+                        closeMobileNavigationMenu={closeMobileNavigationMenu}
+                        href="/doniraj"
+                      >
+                        Doniraj
+                      </MobileNavigationMenuItem>
+
                       {/* <MobileNavigationMenuItem
                         closeMobileNavigationMenu={closeMobileNavigationMenu}
                         href="/ali-ves"

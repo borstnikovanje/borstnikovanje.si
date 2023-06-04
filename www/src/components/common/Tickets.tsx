@@ -110,8 +110,7 @@ const tickets = [
           "je nepozabno doživetje, ki ga ne smete zamuditi. Pridružite se nam na ogledu, ki vključuje tudi Borštnikovo hišo in prikaz kovaštva.",
         price: 0,
         ticketLink: "/dogodki/day-1/dozivi-cerklje",
-        disclaimer:
-          "Število mest je omejeno. Ogled traja 75 min. Vsak dan ob 18:00.",
+        disclaimer: "Število mest je omejeno. Ogled traja 75 min.",
         callToAction: "Prijava",
       },
       {
@@ -249,7 +248,7 @@ export default function Tickets() {
         </div>
 
         <div className="mx-auto flex w-full max-w-2xl flex-col items-center gap-4 text-center">
-          <p>
+          <p className="leading-loose">
             Odkrijte čarobnost gledališča z enostavnim nakupom vstopnic na naši
             spletni strani. Izbirajte med izjemnimi predstavami in si zagotovite
             svoje mesto v prvih vrstah.
