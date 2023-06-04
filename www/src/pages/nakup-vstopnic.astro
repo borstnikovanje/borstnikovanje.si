@@ -1,7 +1,9 @@
 ---
+import { IconChevronRight } from "@tabler/icons-react";
 import { buttonVariants } from "../components/ui/Button";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { twMerge } from "tailwind-merge";
 
 const tickets = await getCollection("festivalTickets");
 ---
@@ -69,24 +71,32 @@ const tickets = await getCollection("festivalTickets");
 
                   <div class="flex items-center gap-2">
                     <a
-                      class={buttonVariants({
-                        intent: "outline-black",
-                        size: "base",
-                      })}
+                      class={twMerge(
+                        buttonVariants({
+                          intent: "outline-black",
+                          size: "base",
+                        }),
+                        "flex items-center gap-1"
+                      )}
                       href={ticket.data.callToActionLink}
                     >
                       Nakup
+                      <IconChevronRight className="h-4 w-4" />
                     </a>
 
                     {ticket.data.eventLink && (
                       <a
-                        class={buttonVariants({
-                          intent: "outline-black",
-                          size: "base",
-                        })}
+                        class={twMerge(
+                          buttonVariants({
+                            intent: "outline-black",
+                            size: "base",
+                          }),
+                          "flex items-center gap-1"
+                        )}
                         href={ticket.data.eventLink}
                       >
                         O dogodku
+                        <IconChevronRight className="h-4 w-4" />
                       </a>
                     )}
                   </div>
