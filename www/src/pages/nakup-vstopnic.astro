@@ -5,6 +5,7 @@ import { buttonVariants } from "../components/ui/Button";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { twMerge } from "tailwind-merge";
+import { IconCalendar } from "@tabler/icons-react";
 
 const ticketsRaw = await getCollection("festivalTickets");
 
@@ -33,8 +34,8 @@ const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
             Z našim priročnim spletnim vmesnikom lahko pregledate razpored
             dogodkov, izberete želeni termin in sedežno mesto ter svoje
             vstopnice enostavno kupite v samo nekaj korakih. Ponujamo tudi
-            možnost nakupa VIP vstopnic, ki vam omogočajo poseben dostop in
-            udobje med dogodki.
+            možnost nakupa Borštnikovih vstopnic - s katerimi dobite več kot
+            samo vstopnico, hkrati pa podprete festival.
           </p>
         </div>
       </div>
@@ -58,9 +59,24 @@ const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
                     format="jpg"
                     alt={ticket.data.title}
                   />
-                  <p class="font-tan-pearl text-2xl leading-normal">
-                    {ticket.data.title}
-                  </p>
+
+                  <div class="flex flex-col gap-2">
+                    <p class="font-tan-pearl text-2xl leading-normal">
+                      {ticket.data.title}
+                    </p>
+
+                    {ticket.data.isoDate && (
+                      <div class="flex items-center gap-2">
+                        <IconCalendar />
+                        <span>
+                          {`${new Date(ticket.data.isoDate).getHours()}:00`},{" "}
+                          {`${new Date(
+                            ticket.data.isoDate
+                          ).toLocaleDateString()}`}
+                        </span>
+                      </div>
+                    )}
+                  </div>
 
                   <div class="flex flex-col gap-2">
                     <div class="flex w-full items-center border-b border-neutral-400 pb-2">

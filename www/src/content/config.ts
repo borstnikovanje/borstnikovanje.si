@@ -74,6 +74,7 @@ const festivalTicketsCollection = defineCollection({
     eventLink: z.string().optional(),
     image: z.string(),
     order: z.number(),
+    isoDate: z.string().optional(),
   }),
 });
 
