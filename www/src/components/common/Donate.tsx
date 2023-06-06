@@ -6,9 +6,16 @@ export default function Donate() {
       <div className="mx-auto flex w-11/12 max-w-screen-xl flex-col items-center gap-10 text-center">
         <h2 className="font-tan-pearl text-4xl lg:text-6xl">Doniraj</h2>
 
-        <p>
-          Z vašo pomočjo bomo dogodek naredili še boljši. Podprite našo ekipo
-          prostovoljcov z donacijo. Hvala ker nas podpirate!
+        <p className="leading-loose">
+          Vaša donacija nam bo omogočila izvedbo predstav iz tekmovalnega
+          programa Borštnikovega srečanja, organizacijo spremljevalnega
+          programa, kreativnih delavnic, okrogle mize s priznanimi Borštnikovimi
+          nagrajenci ter številne druge aktivnosti, ki bodo obogatile kulturno
+          življenje Cerklj in širše regije. Vsak prispevek šteje in ima
+          neposreden vpliv na ohranjanje slovenske kulturne dediščine. Z vašo
+          donacijo boste omogočili lokalnemu prebivalstvu, turistom in mladim,
+          užitek v vrhunskih predstavah uprizoritvene umetnosti ter spoznavanju
+          bogate kulturne dediščine kraja.
         </p>
 
         <Button asChild intent="outline-black">
