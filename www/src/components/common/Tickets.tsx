@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 import { IconChevronRight } from "@tabler/icons-react";
-import ButtonLink from "../ui/ButtonLink";
 
 const tickets = [
   {
@@ -38,7 +37,7 @@ const tickets = [
         price: 50,
         ticketLink: "/nakup-vstopnic",
         disclaimer:
-          "ob nakupu 10 Borštnikovih vstopnic vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+          "ob nakupu 10 Borštnikovih vstopnic prejmete povabilo na svečani sprejem 21.6. po otvoritveni predstavi.",
         callToAction: "Nakup vstopnic",
       },
     ],
@@ -56,8 +55,7 @@ const tickets = [
         price: 35,
         priceStudents: 25,
         ticketLink: "/nakup-vstopnic",
-        disclaimer:
-          "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
+
         callToAction: "Nakup vstopnic",
       },
       {
@@ -69,8 +67,6 @@ const tickets = [
         price: 87,
         priceStudents: 62,
         ticketLink: "/nakup-vstopnic",
-        disclaimer:
-          "ob nakupu 10 kart vam pripada povabilo na VIP sprejem 21.6. po otvoritveni predstavi.",
         callToAction: "Nakup vstopnic",
       },
       {
