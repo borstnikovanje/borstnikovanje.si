@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import { twMerge } from "tailwind-merge";
 import { IconCalendar } from "@tabler/icons-react";
 import { format } from "date-fns";
-import { sl } from "date-fns/locale";
+import sl from "date-fns/locale/sl/index.js";
 
 const ticketsRaw = await getCollection("festivalTickets");
 
