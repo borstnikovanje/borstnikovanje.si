@@ -3,7 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 import { Image } from "@astrojs/image/components";
 import Layout from "../../layouts/Layout.astro";
 import { IconCalendar, IconMapPin } from "@tabler/icons-react";
-import Button from "../../components/ui/Button";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 export async function getStaticPaths() {
   const events = await getCollection("festivalEvents");
@@ -47,37 +47,121 @@ const { Content } = await event.render();
             />
           )
         }
-        <div class="flex flex-col gap-4">
-          <h1 class="font-tan-pearl text-4xl lg:text-6xl">
-            {event.data.title}
-          </h1>
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
-            <div class="flex items-center gap-2">
-              <IconCalendar />
-              <p>{event.data.date} • {event.data.time}</p>
-            </div>
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col gap-4">
+            <h1
+              class="font-tan-pearl text-4xl leading-normal lg:text-6xl lg:leading-none"
+            >
+              {event.data.title}
+            </h1>
+            <div
+              class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6"
+            >
+              <div class="flex items-center gap-2">
+                <IconCalendar />
+                <p>{event.data.date} • {event.data.time}</p>
+              </div>
 
-            <div class="flex items-center gap-2">
-              <IconMapPin />
-              <p>{event.data.location}</p>
+              <div class="flex items-center gap-2">
+                <IconMapPin />
+                <p>{event.data.locationShort}</p>
+              </div>
             </div>
           </div>
+
+          {
+            event.data.eventLink && event.data.price > 0 && (
+              <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                {event.data.priceVIP && (
+                  <a
+                    href={event.data.eventLink}
+                    class="w-full bg-nav-gradient p-1"
+                  >
+                    <div class="flex h-full w-full flex-col gap-4 bg-grain p-4">
+                      <div class="flex items-center gap-2">
+                        <p class="text-lg">Borštnikova vstopnica</p>
+                        <IconArrowUpRight className="h-5 w-5" />
+                      </div>
+
+                      <p class="text-lg font-bold">
+                        Cena:{" "}
+                        <span class="font-normal">{event.data.priceVIP} €</span>
+                      </p>
+                    </div>
+                  </a>
+                )}
+
+                <a
+                  href={event.data.eventLink}
+                  class="w-full bg-nav-gradient p-1"
+                >
+                  <div class="flex h-full w-full flex-col gap-4 bg-grain p-4">
+                    <div class="flex items-center gap-2">
+                      <p class="text-lg">Vstopnica (earlybird)</p>
+                      <IconArrowUpRight className="h-5 w-5" />
+                    </div>
+
+                    <p class="text-lg font-bold">
+                      Cena:{" "}
+                      <span class="font-normal">{event.data.price} €</span>
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href={event.data.eventLink}
+                  class="w-full bg-nav-gradient p-1"
+                >
+                  <div class="flex h-full w-full flex-col gap-4 bg-grain p-4">
+                    <div class="flex items-center gap-2">
+                      <p class="text-lg">
+                        <span class="2xl:hidden">Vstopnica (študentska)</span>
+                        <span class="hidden 2xl:inline-block">
+                          Vstopnica (študentska, upokojenska)
+                        </span>
+                      </p>
+                      <IconArrowUpRight className="h-5 w-5" />
+                    </div>
+
+                    <p class="text-lg font-bold">
+                      Cena:{" "}
+                      <span class="font-normal">
+                        {event.data.priceStudents} €
+                      </span>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            )
+          }
         </div>
+      </section>
+
+      <article class="prose max-w-none">
+        <Content />
+
+        <h2>Lokacija</h2>
+
+        <p>{event.data.location}</p>
 
         {
-          event.data.eventLink && (
-            <div>
-              <Button intent="outline-black">
-                <a href={event.data.eventLink}>
-                  {event.data.price > 0 ? "Nakup vstopnic" : "Prijava"}
-                </a>
-              </Button>
+          event.data.locationEmbedURL && (
+            <div class="w-full bg-nav-gradient p-1">
+              <div class="flex h-full w-full flex-col gap-4 bg-grain">
+                <iframe
+                  src={event.data.locationEmbedURL}
+                  height="300"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="w-full"
+                />
+              </div>
             </div>
           )
         }
-      </section>
-
-      <article class="prose max-w-none"><Content /></article>
+      </article>
     </div>
   </main>
 </Layout>

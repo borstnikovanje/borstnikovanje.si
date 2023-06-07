@@ -37,7 +37,7 @@ const tickets = [
         price: 50,
         ticketLink: "/nakup-vstopnic",
         disclaimer:
-          "ob nakupu 10 Borštnikovih vstopnic prejmete povabilo na svečani sprejem 21.6. po otvoritveni predstavi.",
+          "ob nakupu 10 Borštnikovih vstopnic prejmete povabilo na svečani sprejem 21.6. po otvoritveni predstavi. Podatke za prejem vabila sporočite na: info@borstnikovanje.si",
         callToAction: "Nakup vstopnic",
       },
     ],

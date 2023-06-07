@@ -6,6 +6,8 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { twMerge } from "tailwind-merge";
 import { IconCalendar } from "@tabler/icons-react";
+import { format } from "date-fns";
+import sl from "date-fns/locale/sl/index.js";
 
 const ticketsRaw = await getCollection("festivalTickets");
 
@@ -52,37 +54,66 @@ const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
             tickets.map((ticket) => (
               <div class="w-full rounded-md bg-nav-gradient p-1">
                 <div class="flex h-full w-full flex-col gap-10 bg-grain p-6">
-                  <Image
-                    src={ticket.data.image}
-                    width={1059}
-                    height={412}
-                    format="jpg"
-                    alt={ticket.data.title}
-                  />
+                  <a href={ticket.data.eventLink}>
+                    <Image
+                      src={ticket.data.image}
+                      width={1059}
+                      height={412}
+                      format="jpg"
+                      alt={ticket.data.title}
+                      fetchpriority={"high"}
+                    />
+                  </a>
 
                   <div class="flex flex-col gap-2">
-                    <p class="font-tan-pearl text-2xl leading-normal">
+                    <a
+                      href={ticket.data.eventLink}
+                      class="self-start font-tan-pearl text-2xl leading-normal"
+                    >
                       {ticket.data.title}
-                    </p>
+                    </a>
 
                     {ticket.data.isoDate && (
                       <div class="flex items-center gap-2">
                         <IconCalendar />
                         <span>
-                          {`${new Date(ticket.data.isoDate).getHours()}:00`},{" "}
-                          {`${new Date(
-                            ticket.data.isoDate
-                          ).toLocaleDateString()}`}
+                          {`${format(new Date(ticket.data.isoDate), "eee", {
+                            locale: sl,
+                          })}, ${format(new Date(ticket.data.isoDate), "PP", {
+                            locale: sl,
+                          })} ob ${format(
+                            new Date(ticket.data.isoDate),
+                            "k:mm",
+                            {
+                              locale: sl,
+                            }
+                          )}`}
                         </span>
                       </div>
                     )}
                   </div>
 
                   <div class="flex flex-col gap-2">
-                    <div class="flex w-full items-center border-b border-neutral-400 pb-2">
-                      <p class="w-2/12 font-bold">Cena</p>
+                    {ticket.data.priceVIP && (
+                      <div class="flex w-full items-center border-b border-neutral-400 pb-2">
+                        <p class="w-2/12 font-bold">Cena</p>
 
-                      <p class="w-10/12">{ticket.data.price} €</p>
+                        <p class="w-10/12">
+                          {ticket.data.priceVIP} € (Borštnikova vstopnica)
+                        </p>
+                      </div>
+                    )}
+
+                    <div class="flex w-full items-center border-b border-neutral-400 pb-2">
+                      {ticket.data.priceVIP ? (
+                        <div class="w-2/12" />
+                      ) : (
+                        <p class="w-2/12 font-bold">Cena</p>
+                      )}
+
+                      <p class="w-10/12">
+                        {ticket.data.price} € (Earlybird vstopnica)
+                      </p>
                     </div>
 
                     {ticket.data.priceStudents && (
