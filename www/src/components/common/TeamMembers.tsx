@@ -139,7 +139,7 @@ export default function TeamMembers({ teamMembers }: TeamMembersProps) {
                   width={300}
                   height={400}
                   src={teamMember.data.photo}
-                  alt=""
+                  alt={`${teamMember.data.firstName} ${teamMember.data.lastName}`}
                 />
               </div>
             </Accordion.Content>
