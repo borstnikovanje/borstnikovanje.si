@@ -8,6 +8,7 @@ import { twMerge } from "tailwind-merge";
 import { IconCalendar } from "@tabler/icons-react";
 import { format } from "date-fns";
 import sl from "date-fns/locale/sl/index.js";
+import { utcToZonedTime } from "date-fns-tz";
 
 const ticketsRaw = await getCollection("festivalTickets");
 
@@ -85,7 +86,10 @@ const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
                           })}, ${format(new Date(ticket.data.isoDate), "PP", {
                             locale: sl,
                           })} ob ${format(
-                            new Date(ticket.data.isoDate),
+                            utcToZonedTime(
+                              new Date(ticket.data.isoDate),
+                              "Europe/Ljubljana"
+                            ),
                             "k:mm",
                             {
                               locale: sl,
