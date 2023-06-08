@@ -13,7 +13,10 @@ import { getCollection } from "astro:content";
 const events = await getCollection("events");
 ---
 
-<Layout title="Festival Borštnikovanje">
+<Layout
+  title="Festival Borštnikovanje"
+  description="Neodvisni gledališki festival v rojstnem kraju utemeljitelja slovenskega poklicnega gledališča Ignacija Borštnika"
+>
   <Hero />
   <AccordionEvents client:idle />
   <ProgrammeLandingPage events={events} client:visible />
