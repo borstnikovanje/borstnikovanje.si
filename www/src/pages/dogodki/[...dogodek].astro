@@ -31,7 +31,7 @@ if (!event) {
 const { Content } = await event.render();
 ---
 
-<Layout title={event.data.title}>
+<Layout title={event.data.title} description={event.data.title}>
   <main class="py-12 lg:py-20">
     <div class="mx-auto flex w-11/12 max-w-screen-xl flex-col gap-8">
       <section class="flex flex-col gap-12">

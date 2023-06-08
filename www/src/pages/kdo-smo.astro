@@ -5,9 +5,7 @@ import { getCollection } from "astro:content";
 
 const teamMembersRaw = await getCollection("teamMembers");
 
-const teamMembers = teamMembersRaw
-  .filter((teamMember) => teamMember.data.highlighted)
-  .sort((a, b) => a.data.order - b.data.order);
+const teamMembers = teamMembersRaw.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Kdo smo">

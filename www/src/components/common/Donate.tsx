@@ -9,7 +9,8 @@ export default function Donate() {
         <p className="leading-loose">
           Podprite nas in skupaj ustvarimo največji kulturni dogodek v Cerkljah
           v zadnjih 10 letih! Vaša podpora je neprecenljiva in prav vsak
-          prispevek bo pripomogel k uspešni izvedbi festivala.
+          prispevek bo pripomogel k uspešni izvedbi festivala. Z donacijo ali z
+          nakupom Borštnikovih vstopnic postanite podpornik Borštnikovanja.
         </p>
 
         <Button asChild intent="outline-black">
