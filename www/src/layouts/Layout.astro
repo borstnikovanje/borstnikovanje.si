@@ -17,7 +17,6 @@ const { title, description } = Astro.props;
 <html lang="sl" class="font-inter">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <Fonts />
@@ -28,7 +27,7 @@ const { title, description } = Astro.props;
       description={description}
       openGraph={{
         basic: {
-          title,
+          title: title,
           type: "image/jpeg",
           image: "/photos/invitations/invitation.jpg",
         },
