@@ -117,7 +117,7 @@ const MobileNavigationMenu = ({
                         closeMobileNavigationMenu={closeMobileNavigationMenu}
                         href="/doniraj"
                       >
-                        Doniraj
+                        Donirajte
                       </MobileNavigationMenuItem>
 
                       {/* <MobileNavigationMenuItem
