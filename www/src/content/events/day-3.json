@@ -29,10 +29,10 @@
       "location": "Borštnikov hram",
       "price": 35,
       "priceStudents": 25,
-      "title": "Delavnica z gledališkim mentorjem",
+      "title": "Delavnica z Danielom Dayem Škufco",
       "eventType": "Delavnica",
       "highlighted": true,
-      "eventLink": "/dogodki/day-3/delavnica-z-gledaliskim-mentorjem",
+      "eventLink": "/dogodki/day-3/delavnica-daniel-day-skufca",
       "callToActionLink": "https://olaii.com/event/3092/festival-borstnikovanje-gledaliske-delavnice?ref=KSMUMVX",
       "callToActionTitle": "Nakup vstopnic"
     },
@@ -45,7 +45,7 @@
       "eventType": "Voden ogled",
       "highlighted": false,
       "eventLink": "/dogodki/day-3/dozivi-cerklje",
-      "callToActionLink": "/prijava-cerklje-3",
+      "callToActionLink": "https://forms.gle/hKXyjGX9ArKdPxNr8",
       "callToActionTitle": "Prijava"
     },
     {
