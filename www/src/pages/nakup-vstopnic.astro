@@ -119,7 +119,12 @@ const tickets = ticketsRaw.sort((a, b) => a.data.order - b.data.order);
                       )}
 
                       <p class="w-10/12">
-                        {ticket.data.price} € (Earlybird vstopnica)
+                        {ticket.data.price} €{" "}
+                        {ticket.data.price <= 16 ? (
+                          <span>(Earlybird vstopnica)</span>
+                        ) : (
+                          <span>(Vstopnica)</span>
+                        )}
                       </p>
                     </div>
 
