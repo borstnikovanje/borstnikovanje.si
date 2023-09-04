@@ -4,6 +4,11 @@ import { Image } from "@astrojs/image/components";
 const sponsors = {
   goldSponsors: [
     {
+      name: "Best Ljubljana Experience",
+      image: "/photos/sponsors/best-ljubljana-experience.png",
+      website: "",
+    },
+    {
       name: "Creatim",
       image: "/photos/sponsors/creatim.png",
       website: "https://www.creatim.com/",
@@ -25,6 +30,11 @@ const sponsors = {
     },
   ],
   silverSponsors: [
+    {
+      name: "Pod Jenkovo Lipo",
+      image: "/photos/sponsors/pod-jenkovo-lipo.png",
+      website: "https://mesarstvokmeckihram.com/",
+    },
     {
       name: "Mesarstvo kmečki hram",
       image: "/photos/sponsors/kmecki-hram.png",
@@ -82,32 +92,32 @@ const sponsors = {
     >
       {
         sponsors.goldSponsors.map((sponsor) => (
-          <a href={sponsor.website} class="lg:w-1/5">
-            <img src={sponsor.image} class="w-full" />
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
           </a>
         ))
       }
     </div>
 
     <div
-      class="flex w-full items-center justify-between gap-4 border-4 border-gray-400 p-6"
+      class="flex w-full flex-col items-center justify-between gap-4 border-4 border-gray-400 p-6 lg:flex-row"
     >
       {
         sponsors.silverSponsors.map((sponsor) => (
-          <a href={sponsor.website} class="w-1/5">
-            <img src={sponsor.image} class="w-full" />
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
           </a>
         ))
       }
     </div>
 
     <div
-      class="flex w-full items-center justify-between gap-4 border-4 border-amber-900 p-6"
+      class="flex w-full flex-col items-center justify-between gap-4 border-4 border-amber-900 p-6 lg:flex-row"
     >
       {
         sponsors.bronzeSponsors.map((sponsor) => (
-          <a href={sponsor.website} class="w-1/5">
-            <img src={sponsor.image} class="w-full" />
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
           </a>
         ))
       }
