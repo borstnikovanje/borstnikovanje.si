@@ -1,0 +1,136 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const sponsors = {
+  goldSponsors: [
+    {
+      name: "Best Ljubljana Experience",
+      image: "/photos/sponsors/best-ljubljana-experience.png",
+      website: "",
+    },
+    {
+      name: "Creatim",
+      image: "/photos/sponsors/creatim.png",
+      website: "https://www.creatim.com/",
+    },
+    {
+      name: "Jasna Chalet Resort",
+      image: "/photos/sponsors/jasna.png",
+      website: "https://jasnaresort.com/",
+    },
+    {
+      name: "Yura",
+      image: "/photos/sponsors/yura.png",
+      website: "https://www.yura.si/",
+    },
+    {
+      name: "3fs",
+      image: "/photos/sponsors/3fs.png",
+      website: "",
+    },
+    {
+      name: "Bauta",
+      image: "/photos/sponsors/bauta.png",
+      website: "https://bauta.si/",
+    },
+  ],
+  silverSponsors: [
+    {
+      name: "Pod Jenkovo Lipo",
+      image: "/photos/sponsors/pod-jenkovo-lipo.png",
+      website: "https://mesarstvokmeckihram.com/",
+    },
+    {
+      name: "Mesarstvo kmečki hram",
+      image: "/photos/sponsors/kmecki-hram.png",
+      website: "https://mesarstvokmeckihram.com/",
+    },
+    {
+      name: "Park Jezersko",
+      image: "/photos/sponsors/park-jezersko.png",
+      website: "",
+    },
+    {
+      name: "Sava",
+      image: "/photos/sponsors/sava.png",
+      website: "https://www.zav-sava.si/",
+    },
+    {
+      name: "e3plus",
+      image: "/photos/sponsors/e3plus.png",
+      website: "https://www.e3plus.si/",
+    },
+  ],
+  bronzeSponsors: [
+    {
+      name: "Aviobits",
+      image: "/photos/sponsors/aviobits.png",
+      website: "https://aviobits.com/",
+    },
+    {
+      name: "Kul dizajn",
+      image: "/photos/sponsors/kuldizajn.png",
+      website: "",
+    },
+    {
+      name: "Gostilna Krištof",
+      image: "/photos/sponsors/kristof.png",
+      website: "https://gostilnakristof.si/en/eko-glamping-resort-kristof/",
+    },
+    {
+      name: "Krvavec",
+      image: "/photos/sponsors/krvavec.png",
+      website: "https://www.rtc-krvavec.si/",
+    },
+    {
+      name: "Vrtni center Gašperlin",
+      image: "/photos/sponsors/gasperlin.png",
+      website: "https://www.vrtnicenter.si/",
+    },
+  ],
+};
+---
+
+<section class="bg-cover bg-center bg-no-repeat py-10 lg:py-20">
+  <div
+    class="mx-auto flex w-11/12 max-w-screen-xl flex-col items-center gap-10 text-center"
+  >
+    <h2 class="font-tan-pearl text-4xl lg:text-6xl">Podporniki</h2>
+
+    <div
+      class="flex w-full flex-col items-center justify-between gap-4 border-4 border-amber-500 p-6 lg:flex-row"
+    >
+      {
+        sponsors.goldSponsors.map((sponsor) => (
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
+          </a>
+        ))
+      }
+    </div>
+
+    <div
+      class="flex w-full flex-col items-center justify-between gap-4 border-4 border-gray-400 p-6 lg:flex-row"
+    >
+      {
+        sponsors.silverSponsors.map((sponsor) => (
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
+          </a>
+        ))
+      }
+    </div>
+
+    <div
+      class="flex w-full flex-col items-center justify-between gap-4 border-4 border-amber-900 p-6 lg:flex-row"
+    >
+      {
+        sponsors.bronzeSponsors.map((sponsor) => (
+          <a href={sponsor.website}>
+            <img width="200" height="200" src={sponsor.image} />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

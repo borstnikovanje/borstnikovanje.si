@@ -5,6 +5,7 @@ import Hero from "../components/common/Hero.astro";
 import Newsletter from "../components/common/Newsletter";
 import OurTeam from "../components/common/OurTeam.astro";
 import ProgrammeLandingPage from "../components/common/ProgrammeLandingPage";
+import Sponsors from "../components/common/Sponsors.astro";
 import Tickets from "../components/common/Tickets";
 import Layout from "../layouts/Layout.astro";
 
@@ -23,5 +24,6 @@ const events = await getCollection("events");
   <Tickets client:visible />
   <Donate />
   <OurTeam />
+  <Sponsors />
   <Newsletter client:visible />
 </Layout>
